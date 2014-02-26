@@ -1,0 +1,30 @@
+body{
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+table
+{
+    border: 1px solid grey;
+    border-collapse:collapse;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+td
+{
+    border:1px solid grey;
+    width:250px;
+}
+th
+{
+    border:1px solid #666666;
+    background-color: #666666;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: aliceblue;
+}
+tr:nth-child(odd) {
+    background-color: lightsteelblue;
+}
+a { 
+    color: lightsteelblue;
+    text-decoration:none;
+}
