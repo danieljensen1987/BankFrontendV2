@@ -19,12 +19,19 @@ th
     color: white;
 }
 tr:nth-child(even) {
-    background-color: aliceblue;
+    background-color: #cccccc;
 }
 tr:nth-child(odd) {
-    background-color: lightsteelblue;
+    background-color: #C2C2C2;
 }
 a { 
     color: cornflowerblue;
     text-decoration:none;
+}
+a:hover{
+    text-decoration: underline;
+}
+tr:hover{
+    
+    background: rgba(128,128,128, 0.3);
 }

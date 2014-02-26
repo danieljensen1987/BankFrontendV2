@@ -29,7 +29,8 @@
         </table>
 
         <!--<a href="Back">Back to main page</a> -->
-        <a href="Controller?command=back">Back to main page</a>
+        <a href="Controller?command=main">Back to main page</a>
+        <a href="javascript:history.back()">Back</a>
 
     </body>
 </html>
