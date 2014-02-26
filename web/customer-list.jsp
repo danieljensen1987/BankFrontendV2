@@ -20,6 +20,7 @@
                 <th>Address</th>
                 <th>Phone</th>
                 <th>Email</th>
+                <th>Action</th>
             </tr>
             <c:forEach var = "customer" items = "${customers}">
                 <tr>
@@ -28,7 +29,7 @@
                     <td>${customer.address}</td>
                     <td>${customer.phone}</td>
                     <td>${customer.email}</td>
-                    <td><a href="Controller?command=list-accounts&cpr=${customer.cpr}">Account</a></td>
+                    <td><a href="Controller?command=list-accounts&cpr=${customer.cpr}">Select Account</a></td>
                 </tr>
             </c:forEach>
         </table>

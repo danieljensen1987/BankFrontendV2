@@ -12,10 +12,9 @@
         <h1>This is bank main page${message}</h1>
         <hr/>
         <ul>
-            <!--<li><a href="ListAccounts">list account</a></li>-->
+            <!-- <li><a href="ListAccounts">list account</a></li>-->
             <li><a href="Controller?command=list-customers">List customers</a></li>
-            <li><a href="Controller?command=list-accounts">List accounts</a></li>
+            <!-- <li><a href="Controller?command=list-accounts">List accounts</a></li> -->
         </ul>
-        Content goes here...
     </body>
 </html>
