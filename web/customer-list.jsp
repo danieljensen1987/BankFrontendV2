@@ -19,7 +19,7 @@
         <!--${message} for ${customer.cpr} 
         <br/> -->
         There are ${customers.size()} accounts at the moment:
-        <table>
+        <table class="customer">
             <tr>
                 <th>CPR</th>
                 <th>Name</th>
@@ -29,7 +29,7 @@
                 <!-- <th>Action</th> -->
             </tr>
             <c:forEach var = "customer" items = "${customers}">
-                <tr onclick="DoNav('Controller?command=list-accounts&cpr=${customer.cpr}')">
+                <tr class="customers" onclick="DoNav('Controller?command=list-accounts&cpr=${customer.cpr}')">
                     <td>${customer.cpr}</td>
                     <td>${customer.name}</td>
                     <td>${customer.address}</td>
