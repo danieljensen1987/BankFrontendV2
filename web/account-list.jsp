@@ -13,17 +13,20 @@
         ${message} for ${customer.cpr} 
         <br/>
         There are ${accounts.size()} accounts at the moment:
-        <table>
+        <table class="customer">
             <tr>
                 <th>Account number</th>
                 <th>Account type</th>
                 <th>Balance</th>
+                <th>action</th>
             </tr>
             <c:forEach var = "account" items = "${accounts}">
-                <tr>
+
+                <tr class="customers" onclick="DoNav('Controller?command=list-accounts-detail&number=${account.number}')">
                     <td>${account.number}</td>
                     <td>${account.type}</td>
                     <td>${account.balance}</td>
+                    <td><a href="Controller?command=list-accounts-detail&number=${account.number}">tets</a></td>
                 </tr>
             </c:forEach>
         </table>
@@ -31,6 +34,7 @@
         <!--<a href="Back">Back to main page</a> -->
         <a href="Controller?command=main">Back to main page</a>
         <a href="javascript:history.back()">Back</a>
+
 
     </body>
 </html>
