@@ -16,17 +16,23 @@
         <table>
             <tr>
                 <th>Account type</th>
-                <th>Account interest</th>
+                <!-- <th>Account interest</th> -->
                 <th>Transfers</th>
+                <th>amount</th>
+                <th>Date</th>
             </tr>
             <tr>
-                <td>${accountDetail.type}</td>
-                <td>${accountDetail.interest}</td>
+              <!--  <td>${accountDetail.type}</td> -->
+               <!-- <td>${accountDetail.interest}</td>-->
             </tr>
             <c:forEach var = "transfers" items = "${transfers}">
                 <tr>
                     <td>${accountDetail.type}</td>
-                    <td>${accountDetail.interest}</td>
+                    <td>${transfers.accountnumber}</td>
+                    <td>${transfer.amount}</td>
+                    <td>${transfer.date}</td>
+                    
+                   <!-- <td>${accountDetail.interest}</td> -->
                     
                 </tr>
             </c:forEach> 

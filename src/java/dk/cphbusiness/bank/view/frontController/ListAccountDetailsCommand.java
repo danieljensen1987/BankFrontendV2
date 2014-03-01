@@ -30,15 +30,16 @@ public class ListAccountDetailsCommand extends TargetCommand
         
         String id = request.getParameter("number");
         AccountDetail accountDetail = manager.showAccountHistory(new AccountIdentifier(id));
+        
         for (int i = 0; i < accountDetail.getTransfers().size(); i++) {
             System.out.println("Account number "+accountDetail.getTransfers().iterator().next().getAccountNumber());
             System.out.println("Amount "+accountDetail.getTransfers().iterator().next().getAmount());
             System.out.println("Date "+accountDetail.getTransfers().iterator().next().getDate());
         }
-        
-       
         request.setAttribute("accountDetail", accountDetail);
-        request.setAttribute("tranfers", accountDetail.getTransfers().iterator().next().getAccountNumber());
+        request.setAttribute("tranfers", accountDetail.getTransfers());
+//                .iterator().next().getAccountNumber());
+      //  request.setAttribute("Date", accountDetail.getTransfers().iterator().next().getDate());
         return super.execute(request);
     }
     

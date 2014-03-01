@@ -18,15 +18,17 @@
                 <th>Account number</th>
                 <th>Account type</th>
                 <th>Balance</th>
-                <th>action</th>
+                <th>Interest</th>
+                <th>Transfer History</th>
             </tr>
             <c:forEach var = "account" items = "${accounts}">
-
+                
                 <tr class="customers" onclick="DoNav('Controller?command=list-accounts-detail&number=${account.number}')">
                     <td>${account.number}</td>
                     <td>${account.type}</td>
                     <td>${account.balance}</td>
-                    <td><a href="Controller?command=list-accounts-detail&number=${account.number}">tets</a></td>
+                    <td>${accountDetails.interest.doubleValue()}%</td>
+                    <td><a href="Controller?command=list-accounts-detail&number=${account.number}">History</a></td>
                 </tr>
             </c:forEach>
         </table>
