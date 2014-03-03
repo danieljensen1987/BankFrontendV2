@@ -22,6 +22,7 @@ public class ListCustomersCommand extends TargetCommand
         Collection<CustomerSummary> customers = manager.listCustomers();
         
         request.setAttribute("customers", customers);
+        request.setAttribute("message", "This is a not test");
         
         return super.execute(request);
     }

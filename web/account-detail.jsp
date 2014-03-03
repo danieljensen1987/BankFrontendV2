@@ -10,37 +10,30 @@
     <body>
         <h1>Account Detail</h1>
         <hr/>
-        ${message} for ${account.number} 
+        ${message} 
         <br/>
 
         <table>
             <tr>
-                <th>Account type</th>
-                <!-- <th>Account interest</th> -->
-                <th>Transfers</th>
-                <th>amount</th>
                 <th>Date</th>
-            </tr>
-            <tr>
-              <!--  <td>${accountDetail.type}</td> -->
-               <!-- <td>${accountDetail.interest}</td>-->
+                <th>amount</th>
+                <th>From account</th>
             </tr>
             <c:forEach var = "transfers" items = "${transfers}">
                 <tr>
-                    <td>${accountDetail.type}</td>
-                    <td>${transfers.accountnumber}</td>
-                    <td>${transfer.amount}</td>
-                    <td>${transfer.date}</td>
-                    
-                   <!-- <td>${accountDetail.interest}</td> -->
-                    
+                    <td>${transfers.date}</td>                
+                    <td>${transfers.amount}</td>                
+                    <td>${transfers.accountNumber}</td>                
                 </tr>
             </c:forEach> 
         </table>
-
-        <!--<a href="Back">Back to main page</a> -->
+        |
         <a href="Controller?command=main">Back to main page</a>
+        |
         <a href="javascript:history.back()">Back</a>
+        |
+            <a href="Controller?command=transfer">Transfer money</a>
+        |
 
     </body>
 </html>

@@ -3,6 +3,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript">
+            function DoNav(url)
+            {
+                document.location.href = url;
+            }
+        </script>
         <link rel="stylesheet" href="default.css" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Account list</title>
@@ -19,23 +25,24 @@
                 <th>Account type</th>
                 <th>Balance</th>
                 <th>Interest</th>
-                <th>Transfer History</th>
             </tr>
             <c:forEach var = "account" items = "${accounts}">
-                
+
                 <tr class="customers" onclick="DoNav('Controller?command=list-accounts-detail&number=${account.number}')">
                     <td>${account.number}</td>
                     <td>${account.type}</td>
                     <td>${account.balance}</td>
                     <td>${accountDetails.interest.doubleValue()}%</td>
-                    <td><a href="Controller?command=list-accounts-detail&number=${account.number}">History</a></td>
                 </tr>
             </c:forEach>
         </table>
 
         <!--<a href="Back">Back to main page</a> -->
+        |
         <a href="Controller?command=main">Back to main page</a>
+        |
         <a href="javascript:history.back()">Back</a>
+        |
 
 
     </body>

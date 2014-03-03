@@ -41,7 +41,9 @@
         </table>
 
         <!--<a href="Back">Back to main page</a> -->
+        |
         <a href="Controller?command=main">Back to main page</a>
+        |
 
     </body>
 </html>

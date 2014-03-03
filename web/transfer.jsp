@@ -9,36 +9,34 @@
     <body>
         <h1>Transfer money</h1>
         <hr/>
-        <div>
-        <table>
-            
-            <tr>
-                <th>From Account</th>
-                <td><input type="text" name="source" value=""/></td>
-            </tr>
+        <form action="Controller">
+            <table>
                 <tr>
-                    <th>To Account </th>
-                    <td><input type="text" name="target" value=""/></td>
+                    <th><label for="source">From Account</label></th>
+                    <td><input type="text" name="source" id="source"></td>
+
                 </tr>
-                
                 <tr>
-                    <th>Amount</th>
-                    <td><input type="number" name="amount" value=""/></td>
+                    <th><label for="target">To Account</label></th>
+                    <td><input type="text" name="target" id="target"></td>
                 </tr>
-                
                 <tr>
-                    <th>Date</th>
-                    <td><input type="date" name="date" value=""/></td>
+                    <th><label for="amount">Amount</label></th>
+                    <td><input type="number" name="amount" id="amount"></td>
                 </tr>
-                
                 <tr>
-                    <th></th>
-                    <td><input type="submit" name="accept" value="accept" style="margin-left: 63%"/></td>
+                    <th><label for="date">Date</label></th>
+                    <td><input type="date" name="date" id="date"></td>
                 </tr>
-                
-                
-        </table>
-    </div>     
-        
+
+                <td>
+                    <button type="submit" name="command" value="transferMoney" style="padding-left: auto">Accept</button>
+                    
+                </td>
+
+
+            </table>
+
+        </form> 
     </body>
 </html>
