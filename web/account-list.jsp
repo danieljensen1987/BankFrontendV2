@@ -11,12 +11,11 @@
         </script>
         <link rel="stylesheet" href="default.css" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Account list</title>
+        <title>cphbank account list</title>
     </head>
     <body>
-        <h1>Account list</h1>
-        <hr/>
-        ${message} for ${customer.cpr} 
+        <%@include file="newjsp.jsp"%>
+        ${message} for ${cpr} 
         <br/>
         There are ${accounts.size()} accounts at the moment:
         <table class="customer">

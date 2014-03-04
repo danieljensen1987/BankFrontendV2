@@ -4,11 +4,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP transfer Page</title>
+        <link rel="stylesheet" href="default.css" type="text/css"/>
+        <title>cphbank transfer Page</title>
     </head>
     <body>
-        <h1>Transfer money</h1>
-        <hr/>
+        <%@include file="newjsp.jsp"%>
+        ${message} ${accountNumber}
         <form action="Controller">
             <table>
                 <tr>

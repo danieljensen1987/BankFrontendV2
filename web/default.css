@@ -1,19 +1,20 @@
-body{
-    font-family: Verdana, Helvetica, Arial, sans-serif;
+#block-main{
+    background-color: #00153a;
 }
-table
-{
+body{
+    font-family: Verdana, Helvetica, Arial, sans-serif; 
+    margin: 0px;
+}
+table{
+    margin: 10px;
     border: 1px solid grey;
     border-collapse:collapse;
     font-family: Verdana, Helvetica, Arial, sans-serif;
 }
-td
-{
+td{
     border:1px solid grey;
-    
 }
-th
-{
+th{
     border:1px solid #666666;
     background-color: #666666;
     color: white;
@@ -38,7 +39,7 @@ table.customer tr.customers:nth-child(odd) {
     background-color: #C2C2C2;
 }
 table.customer tr.customers:hover{
-    
+
     background: rgba(128,128,128, 0.3);
     cursor: pointer;
 }

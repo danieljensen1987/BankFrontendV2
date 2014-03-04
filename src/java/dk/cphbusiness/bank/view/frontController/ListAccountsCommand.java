@@ -28,7 +28,9 @@ public class ListAccountsCommand extends TargetCommand
        // AccountIdentifier acid = AccountIdentifier.fromString(request.getParameter("number"));
         
       //  Double interest = manager.showAccountHistory(acid).getInterest().doubleValue();
-        request.setAttribute("accounts", accounts);
+        //request.setAttribute("accounts", accounts);
+        request.getSession().setAttribute("accounts", accounts);
+        request.getSession().setAttribute("cpr", customer.getCpr());
         request.setAttribute("accountDetails", ad);
         request.setAttribute("message", "This is a test");
         request.setAttribute("customer", customer);

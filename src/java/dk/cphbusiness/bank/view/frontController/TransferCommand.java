@@ -23,20 +23,13 @@ public class TransferCommand extends TargetCommand
     @Override
     public String execute(HttpServletRequest request)
     {
-            AccountIdentifier sourceAccount = new AccountIdentifier(request.getParameter("source"));
-            AccountIdentifier targetAccount = new AccountIdentifier(request.getParameter("target"));
-            String sAmount = request.getParameter("amount");
-            BigDecimal amount = new BigDecimal(sAmount);
-            
-            System.out.println("TC Source " + sourceAccount.getNumber());
-            System.out.println("TC target " + targetAccount.getNumber());
-            System.out.println("TC amount " + amount);
-            
-            BankManager manager = Factory.getInstance().getManager();
-            
+        BankManager manager = Factory.getInstance().getManager();
+        AccountIdentifier sourceAccount = new AccountIdentifier(request.getParameter("source"));
+        AccountIdentifier targetAccount = new AccountIdentifier(request.getParameter("target"));
+        BigDecimal amount = new BigDecimal(request.getParameter("amount"));
+        
         try {
             AccountDetail aDetail = manager.transferAmount(amount, sourceAccount, targetAccount);
-            request.setAttribute("transfers", aDetail);
         } catch (NoSuchAccountException ex) {
             Logger.getLogger(TransferCommand.class.getName()).log(Level.SEVERE, null, ex);
         } catch (TransferNotAcceptedException ex) {
@@ -44,8 +37,8 @@ public class TransferCommand extends TargetCommand
         } catch (InsufficientFundsException ex) {
             Logger.getLogger(TransferCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
-            request.setAttribute("message", "What the fuck");
-            
+        
+
         return super.execute(request);
     }
 

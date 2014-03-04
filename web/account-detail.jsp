@@ -1,18 +1,18 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri= "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="default.css" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Account Detail</title>
+        <title>cphbank account detail</title>
     </head>
     <body>
-        <h1>Account Detail</h1>
-        <hr/>
-        ${message} 
+        <%@include file="newjsp.jsp"%>
+        
+        Details for account: ${accountNumber}
         <br/>
-
         <table>
             <tr>
                 <th>Date</th>
@@ -21,7 +21,7 @@
             </tr>
             <c:forEach var = "transfers" items = "${transfers}">
                 <tr>
-                    <td>${transfers.date}</td>                
+                    <td><fmt:formatDate pattern="yyyy-MM-dd" value="${transfers.date}"/></td>                
                     <td>${transfers.amount}</td>                
                     <td>${transfers.accountNumber}</td>                
                 </tr>
@@ -32,7 +32,7 @@
         |
         <a href="javascript:history.back()">Back</a>
         |
-            <a href="Controller?command=transfer">Transfer money</a>
+        <a href="Controller?command=prepair-transfer">Transfer money</a>
         |
 
     </body>
