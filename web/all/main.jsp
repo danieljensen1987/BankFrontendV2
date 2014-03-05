@@ -6,7 +6,7 @@
 <html>
     <head>
 
-        <link rel="stylesheet" href="/Bank/style/css/default.css"/>
+        <link rel="stylesheet" href="/BankFrontend/style/css/default.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>cphbank - main page</title>
     </head>

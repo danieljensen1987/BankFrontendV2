@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "Controller", urlPatterns = {"/Controller"})
-public class FrontController extends HttpServlet {
+public class Controller extends HttpServlet {
 
   private int PORT_NON_SSL;
   private int PORT_SSL;
    
-    public FrontController()
+    public Controller()
     {
     }
 

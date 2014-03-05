@@ -7,7 +7,7 @@
     </context-param>
     <context-param>
         <description>Port for SSL communication</description>
-        <param-name>portSLL</param-name>
+        <param-name>portSSL</param-name>
         <param-value>8181</param-value>
     </context-param>
     <context-param>
