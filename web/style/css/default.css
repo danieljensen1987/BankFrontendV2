@@ -1,7 +1,7 @@
 body{
     font-family: Verdana, Helvetica, Arial, sans-serif; 
     margin: 0px;
-    background-image: url(.../main.png);
+    background-image: url(.../gfx/main.png);
     background-repeat: repeat;
     
 }
@@ -14,7 +14,7 @@ body{
 }
 #banner{
     background-color: #00153a;
-    background-image: url(.../cphbank-logo.png);
+    background-image: url(.../gfx/cphbank-logo.png);
     background-size: 300px;
     background-repeat: no-repeat;
     background-position: center;
