@@ -1,21 +1,23 @@
-package dk.cphbusiness.bank.view.frontController;
+package commands;
 
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.AccountDetail;
 import dk.cphbusiness.bank.contract.dto.AccountIdentifier;
 import dk.cphbusiness.bank.contract.dto.AccountSummary;
 import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
-import dk.cphbusiness.bank.view.Factory;
+import servlets.Factory;
 import dk.cphbusiness.dummy.bank.model.Account;
 import java.util.Collection;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import security.SecurityRole;
 
 public class ListAccountsCommand extends TargetCommand
 {
 
-    public ListAccountsCommand(String target)
+    public ListAccountsCommand(String target, List<SecurityRole> roles)
     {
-        super(target);
+        super(target, roles);
     }
 
     @Override

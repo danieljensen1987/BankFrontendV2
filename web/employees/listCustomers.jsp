@@ -14,7 +14,7 @@
         <title>cphbank customer list</title>
     </head>
     <body>
-        <%@include file="newjsp.jsp"%>
+        <%@include file="/all/newjsp.jsp"%>
         <!--${message} for ${customer.cpr} 
         <br/> -->
         There are ${customers.size()} accounts at the moment:

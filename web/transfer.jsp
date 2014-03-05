@@ -8,7 +8,7 @@
         <title>cphbank transfer Page</title>
     </head>
     <body>
-        <%@include file="newjsp.jsp"%>
+        <%@include file="/all/newjsp.jsp"%>
         ${message} ${accountNumber}
         <form action="Controller">
             <table>

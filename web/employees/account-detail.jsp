@@ -9,7 +9,7 @@
         <title>cphbank account detail</title>
     </head>
     <body>
-        <%@include file="newjsp.jsp"%>
+        <%@include file="/all/newjsp.jsp"%>
         
         Details for account: ${accountNumber}
         <br/>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <description>Port for non SSL communication</description>
+        <param-name>portNonSSL</param-name>
+        <param-value>8080</param-value>
+    </context-param>
+    <context-param>
+        <description>Port for SSL communication</description>
+        <param-name>portSLL</param-name>
+        <param-value>8181</param-value>
+    </context-param>
+    <context-param>
+        <param-name>useSSL</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>autoLogon</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <param-name>autoLogonUser</param-name>
+        <param-value>emp</param-value>
+    </context-param>
+    <context-param>
+        <param-name>autoLogonPassword</param-name>
+        <param-value>test</param-value>
+    </context-param>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>Controller</welcome-file>
+    </welcome-file-list>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login/login.jsp</form-login-page>
+            <form-error-page>/login/login.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    <security-role>
+        <description>Can se all things relating to him/her</description>
+        <role-name>Customer</role-name>
+    </security-role>
+    <security-role>
+        <description>Can list all details for costumers</description>
+        <role-name>Employee</role-name>
+    </security-role>
+    <security-role>
+        <description>Can create new customers and everything an employee can do</description>
+        <role-name>SuperEmployee</role-name>
+    </security-role>
+</web-app>

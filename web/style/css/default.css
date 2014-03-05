@@ -1,10 +1,25 @@
-#block-main{
-    background-color: #00153a;
-}
 body{
     font-family: Verdana, Helvetica, Arial, sans-serif; 
     margin: 0px;
+    background-image: url(/Bank/style/main.png);
+    background-repeat: repeat;
+    
 }
+#wrapper{
+    background-color: white;
+}
+#banner{
+    background-color: #00153a;
+    background-image: url(/Bank/style/cphbank-logo.png);
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0px auto;
+    height: 150px;
+    width: 800px;
+    
+}
+
 table{
     margin: 10px;
     border: 1px solid grey;

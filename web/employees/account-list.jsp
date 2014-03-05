@@ -14,7 +14,7 @@
         <title>cphbank account list</title>
     </head>
     <body>
-        <%@include file="newjsp.jsp"%>
+        <%@include file="/all/newjsp.jsp"%>
         ${message} for ${cpr} 
         <br/>
         There are ${accounts.size()} accounts at the moment:
