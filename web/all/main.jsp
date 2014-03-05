@@ -13,29 +13,29 @@
     <body>
         <div id="wrapper">
             <div id="banner">
-                <ul>
+                <div id="login">
                     <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
-                        <li><a href="Controller?command=customer-main">Customer main page</a></li>
-                        </c:if >
+                        <a href="Controller?command=customer-main">Customer main page</a>
+                    </c:if >
 
                     <c:if test="${pageContext.request.isUserInRole('Employee')==true || 
                                   pageContext.request.isUserInRole('SuperEmployee')==true}">
-                          <li><a href="Controller?command=employee-main">Employee Main page</a></li>
-                          </c:if>
+                          <a href="Controller?command=employee-main">Employee Main page</a>
+                    </c:if>
 
                     <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
-                        <li><a href="Controller?command=addcustomer">Add Customer</a></li>
-                        </c:if>
+                        <a href="Controller?command=addcustomer">Add Customer</a>
+                    </c:if>
 
                     <c:choose >
                         <c:when test="${pageContext.request.remoteUser== null}">
-                            <li><a href="Controller?command=showlogin">Login</a>
-                            </c:when>
-                            <c:otherwise>
-                            <li><a href="Controller?command=logout">Log out</a></li>
-                            </c:otherwise>
-                        </c:choose>
-                </ul>
+                            <a href="Controller?command=showlogin">Login</a>
+                        </c:when>
+                        <c:otherwise>
+                            <a href="Controller?command=logout">Log out</a>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
             </div>
         </div>
     </body>

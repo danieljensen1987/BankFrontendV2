@@ -1,23 +1,29 @@
 body{
     font-family: Verdana, Helvetica, Arial, sans-serif; 
     margin: 0px;
-    background-image: url(/Bank/style/main.png);
+    background-image: url(.../main.png);
     background-repeat: repeat;
     
 }
 #wrapper{
+    margin: 0px auto;
+    width: 800px;
+    background-position: center;
     background-color: white;
+    
 }
 #banner{
     background-color: #00153a;
-    background-image: url(/Bank/style/cphbank-logo.png);
+    background-image: url(.../cphbank-logo.png);
     background-size: 300px;
     background-repeat: no-repeat;
     background-position: center;
     margin: 0px auto;
     height: 150px;
     width: 800px;
-    
+}
+#login{
+    text-align: right;
 }
 
 table{
