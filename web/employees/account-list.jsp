@@ -10,7 +10,7 @@
             }
         </script>
         <link rel="stylesheet" href="/BankFrontend/style/css/default.css"/>
-        <link rel="shortcut icon" href="../style/gfx/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/BankFrontend/style/gfx/favicon.ico" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>cphbank account list</title>
     </head>
