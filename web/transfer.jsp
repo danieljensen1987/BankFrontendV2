@@ -10,7 +10,7 @@
     </head>
     <body>
         <div id="banner">
-            <%@include file="../style/css/loginLogoutButton.jsp" %>
+            <%@include file="style/css/loginLogoutButton.jsp" %>
         </div>
         <div id="spacer"></div>
         <div id="wrapper">
