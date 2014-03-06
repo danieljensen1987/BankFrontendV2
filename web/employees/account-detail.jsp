@@ -10,33 +10,11 @@
         <title>cphbank account detail</title>
     </head>
     <body>
+        <div id="banner">
+            <%@include file="../style/css/loginLogoutButton.jsp" %>
+        </div>
+        <div id="spacer"></div>
         <div id="wrapper">
-            <div id="banner">
-                <div id="login">
-                    <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
-                        <a href="Controller?command=customer-main">Customer main page</a>
-                    </c:if >
-
-                    <c:if test="${pageContext.request.isUserInRole('Employee')==true || 
-                                  pageContext.request.isUserInRole('SuperEmployee')==true}">
-                          <a href="Controller?command=employee-main">Employee Main page</a>
-                    </c:if>
-
-                    <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
-                        <a href="Controller?command=addcustomer">Add Customer</a>
-                    </c:if>
-
-                    <c:choose >
-                        <c:when test="${pageContext.request.remoteUser== null}">
-                            <a href="Controller?command=showlogin">Login</a>
-                        </c:when>
-                        <c:otherwise>
-                            <a href="Controller?command=logout">Log out</a>
-                        </c:otherwise>
-                    </c:choose>
-                </div>
-            </div>
-
             Details for account: ${accountNumber}
             <br/>
             <table>
@@ -61,5 +39,7 @@
             <a href="Controller?command=prepair-transfer">Transfer money</a>
             |
         </div>
+        <div id="spacer"></div>
+        <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
     </body>
 </html>

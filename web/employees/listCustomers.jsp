@@ -15,60 +15,41 @@
         <title>cphbank customer list</title>
     </head>
     <body>
+        <div id="banner">
+            <%@include file="../style/css/loginLogoutButton.jsp" %>
+        </div>
+        <div id="spacer"></div>
         <div id="wrapper">
-            <div id="banner">
-                <div id="login">
-                    <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
-                        <a href="Controller?command=customer-main">Customer main page</a>
-                    </c:if >
-
-                    <c:if test="${pageContext.request.isUserInRole('Employee')==true || 
-                                  pageContext.request.isUserInRole('SuperEmployee')==true}">
-                          <a href="Controller?command=employee-main">Employee Main page</a>
-                    </c:if>
-
-                    <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
-                        <a href="Controller?command=addcustomer">Add Customer</a>
-                    </c:if>
-
-                    <c:choose >
-                        <c:when test="${pageContext.request.remoteUser== null}">
-                            <a href="Controller?command=showlogin">Login</a>
-                        </c:when>
-                        <c:otherwise>
-                            <a href="Controller?command=logout">Log out</a>
-                        </c:otherwise>
-                    </c:choose>
-                </div>
-            </div>
         <!--${message} for ${customer.cpr} 
         <br/> -->
-        There are ${customers.size()} accounts at the moment:
-        <table class="customer">
-            <tr>
-                <th>CPR</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <!-- <th>Action</th> -->
-            </tr>
-            <c:forEach var = "customer" items = "${customers}">
-                <tr class="customers" onclick="DoNav('Controller?command=list-accounts&cpr=${customer.cpr}')">
-                    <td>${customer.cpr}</td>
-                    <td>${customer.name}</td>
-                    <td>${customer.address}</td>
-                    <td>${customer.phone}</td>
-                    <td>${customer.email}</td>
-                    <!-- <td><a href="Controller?command=list-accounts&cpr=${customer.cpr}">Select Account</a></td> -->
+            There are ${customers.size()} accounts at the moment:
+            <table class="customer">
+                <tr>
+                    <th>CPR</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <!-- <th>Action</th> -->
                 </tr>
-            </c:forEach>
-        </table>
+                <c:forEach var = "customer" items = "${customers}">
+                    <tr class="customers" onclick="DoNav('Controller?command=list-accounts&cpr=${customer.cpr}')">
+                        <td>${customer.cpr}</td>
+                        <td>${customer.name}</td>
+                        <td>${customer.address}</td>
+                        <td>${customer.phone}</td>
+                        <td>${customer.email}</td>
+                        <!-- <td><a href="Controller?command=list-accounts&cpr=${customer.cpr}">Select Account</a></td> -->
+                    </tr>
+                </c:forEach>
+            </table>
 
-        <!--<a href="Back">Back to main page</a> -->
-        |
-        <a href="Controller?command=main">Back to main page</a>
-        |
+            <!--<a href="Back">Back to main page</a> -->
+            |
+            <a href="Controller?command=main">Back to main page</a>
+            |
         </div>
+        <div id="spacer"></div>
+        <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
     </body>
 </html>

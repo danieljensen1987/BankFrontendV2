@@ -15,60 +15,40 @@
         <title>cphbank account list</title>
     </head>
     <body>
-        <div id="wrapper">
-            <div id="banner">
-                <div id="login">
-                    <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
-                        <a href="Controller?command=customer-main">Customer main page</a>
-                    </c:if >
-
-                    <c:if test="${pageContext.request.isUserInRole('Employee')==true || 
-                                  pageContext.request.isUserInRole('SuperEmployee')==true}">
-                          <a href="Controller?command=employee-main">Employee Main page</a>
-                    </c:if>
-
-                    <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
-                        <a href="Controller?command=addcustomer">Add Customer</a>
-                    </c:if>
-
-                    <c:choose >
-                        <c:when test="${pageContext.request.remoteUser== null}">
-                            <a href="Controller?command=showlogin">Login</a>
-                        </c:when>
-                        <c:otherwise>
-                            <a href="Controller?command=logout">Log out</a>
-                        </c:otherwise>
-                    </c:choose>
-                </div>
-            </div>
-        ${message} for ${cpr} 
-        <br/>
-        There are ${accounts.size()} accounts at the moment:
-        <table class="customer">
-            <tr>
-                <th>Account number</th>
-                <th>Account type</th>
-                <th>Balance</th>
-                <th>Interest</th>
-            </tr>
-            <c:forEach var = "account" items = "${accounts}">
-
-                <tr class="customers" onclick="DoNav('Controller?command=list-accounts-detail&number=${account.number}')">
-                    <td>${account.number}</td>
-                    <td>${account.type}</td>
-                    <td>${account.balance}</td>
-                    <td>${accountDetails.interest.doubleValue()}%</td>
-                </tr>
-            </c:forEach>
-        </table>
-
-        <!--<a href="Back">Back to main page</a> -->
-        |
-        <a href="Controller?command=main">Back to main page</a>
-        |
-        <a href="javascript:history.back()">Back</a>
-        |
-
+        <div id="banner">
+            <%@include file="../style/css/loginLogoutButton.jsp" %>
         </div>
+        <div id="spacer"></div>
+        <div id="wrapper">
+            ${message} for ${cpr} 
+            <br/>
+            There are ${accounts.size()} accounts at the moment:
+            <table class="customer">
+                <tr>
+                    <th>Account number</th>
+                    <th>Account type</th>
+                    <th>Balance</th>
+                    <th>Interest</th>
+                </tr>
+                <c:forEach var = "account" items = "${accounts}">
+
+                    <tr class="customers" onclick="DoNav('Controller?command=list-accounts-detail&number=${account.number}')">
+                        <td>${account.number}</td>
+                        <td>${account.type}</td>
+                        <td>${account.balance}</td>
+                        <td>${accountDetails.interest.doubleValue()}%</td>
+                    </tr>
+                </c:forEach>
+            </table>
+
+            <!--<a href="Back">Back to main page</a> -->
+            |
+            <a href="Controller?command=main">Back to main page</a>
+            |
+            <a href="javascript:history.back()">Back</a>
+            |
+        </div>
+        <div id="spacer"></div>
+        <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
     </body>
 </html>

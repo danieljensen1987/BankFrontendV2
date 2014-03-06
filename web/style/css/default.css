@@ -24,7 +24,6 @@
     
 }
 body{
-    font-family: Verdana, Helvetica, Arial, sans-serif; 
     margin: 0px;
     background-image: url(.../gfx/main.png);
     background-repeat: repeat;
@@ -46,7 +45,23 @@ body{
     font-size: 10px;
 }
 #login{
+    
     text-align: right;
+    
+}
+#login a{
+    font-family: Gotham, Helvetica, Arial, sans-serif;
+    padding-right: 10px;
+    padding-top: 10px;
+    text-align: right;
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+}
+#login a:hover{
+    color: #fbb040;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 table{
@@ -70,11 +85,11 @@ tr:nth-child(odd) {
     background-color: #C2C2C2;
 }
 a { 
-    color: cornflowerblue;
-    text-decoration:none;
+    //color: cornflowerblue;
+    //text-decoration:none;
 }
 a:hover{
-    text-decoration: underline;
+    //text-decoration: underline;
 }
 table.customer tr.customers:nth-child(even) {
     background-color: #cccccc;
