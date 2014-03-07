@@ -34,7 +34,7 @@ public class Factory
         manager = new DummyBankManager();
         Map<SecurityRole, String> roles = new HashMap();
         roles.put(SecurityRole.Employee, "/employees/employeeStartPage.jsp");
-        roles.put(SecurityRole.SuperEmployee, "/superEmployee/addCustomer.jsp");
+        roles.put(SecurityRole.SuperEmployee, "/superEmployees/superEmployeeStartPage.jsp");
         roles.put(SecurityRole.Customer, "/customers/startCustomerPage.jsp");
         
         
@@ -64,8 +64,8 @@ public class Factory
 //        commands.put("viewcustomer", new ViewCustomerCommand("/employees/viewCustomer.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
         commands.put("employee-main", new TargetCommand("/employees/employeeStartPage.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
 //
-        commands.put("create-customer", new TargetCommand("/superEmployee/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
-        commands.put("save-customer", new SaveCustomerCommand("/superEmployee/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("create-customer", new TargetCommand("/superEmployees/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("save-customer", new SaveCustomerCommand("/superEmployees/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
 //        commands.put("save-customer", new SaveCustomerCommand("/superEmployee/addCustomer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
     }
 
