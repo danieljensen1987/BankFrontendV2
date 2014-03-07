@@ -14,7 +14,7 @@
             
         </div>
         <div id="main_menubar">
-            <%@include file="../style/css/loginLogoutButton.jsp" %>
+            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
         </div>
         <div id="spacer"></div>
         
