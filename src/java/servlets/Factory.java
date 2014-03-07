@@ -46,8 +46,8 @@ public class Factory
         commands.put("list-customers", new ListCustomersCommand("/employees/listCustomers.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
         commands.put("list-accounts", new ListAccountsCommand("/employees/account-list.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
         commands.put("list-accounts-detail", new ListAccountDetailsCommand("/employees/account-detail.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
-        commands.put("prepair-transfer", new PrepairTransferCommand("transfer.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
-        commands.put("transferMoney", new TransferCommand("/employees/account-detail.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
+        commands.put("prepair-transfer", new PrepairTransferCommand("/transactions/transfer.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
+        commands.put("transferMoney", new TransferCommand("/transactions/transaction_confirmation.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
         
         
 //        commands.put("main", new TargetCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));

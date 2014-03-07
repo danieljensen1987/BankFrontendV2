@@ -26,7 +26,9 @@ public class ListAccountDetailsCommand extends TargetCommand
         
         request.getSession().setAttribute("transfers", transfers.getTransfers());
         request.getSession().setAttribute("message", "History of account");
-        request.setAttribute("accountNumber", account.getNumber());
+        request.getSession().setAttribute("accountNumber", account.getNumber());
+        
+        //request.setAttribute("accountNumber", account.getNumber());
         
         return super.execute(request);
     }

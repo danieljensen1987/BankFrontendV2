@@ -15,7 +15,7 @@
         </div>
         <div id="spacer"></div>
         <div id="wrapper">
-            Details for account: ${accountNumber}
+            Details for account: ${accountNumber} ${cpr}
             <br/>
             <table>
                 <tr>

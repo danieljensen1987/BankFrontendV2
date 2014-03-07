@@ -8,6 +8,7 @@ import dk.cphbusiness.bank.contract.eto.NoSuchAccountException;
 import dk.cphbusiness.bank.contract.eto.TransferNotAcceptedException;
 import servlets.Factory;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,10 +30,11 @@ public class TransferCommand extends TargetCommand
         AccountIdentifier sourceAccount = new AccountIdentifier(request.getParameter("source"));
         AccountIdentifier targetAccount = new AccountIdentifier(request.getParameter("target"));
         BigDecimal amount = new BigDecimal(request.getParameter("amount"));
-        
+        Date trans_date = null;
         try {
             AccountDetail aDetail = manager.transferAmount(amount, sourceAccount, targetAccount);
-        } catch (NoSuchAccountException ex) {
+            trans_date = aDetail.getTransfers().iterator().next().getDate();
+        } catch (NoSuchAccountException ex) { request.setAttribute("error_message", ex);
             Logger.getLogger(TransferCommand.class.getName()).log(Level.SEVERE, null, ex);
         } catch (TransferNotAcceptedException ex) {
             Logger.getLogger(TransferCommand.class.getName()).log(Level.SEVERE, null, ex);
@@ -40,6 +42,12 @@ public class TransferCommand extends TargetCommand
             Logger.getLogger(TransferCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        request.setAttribute("date", trans_date);
+        request.setAttribute("src_acc", sourceAccount.getNumber());
+        request.setAttribute("targ_acc", targetAccount.getNumber());
+        request.setAttribute("amnt", amount);
+        request.setAttribute("message", "The following transaction has been made from "+sourceAccount.getNumber()+ 
+                             " please check details for inconsistencies");
 
         return super.execute(request);
     }
