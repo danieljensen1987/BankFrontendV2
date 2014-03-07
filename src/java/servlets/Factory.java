@@ -9,6 +9,7 @@ import commands.ListCustomersCommand;
 import commands.LoginCommand;
 import commands.LogoutCommand;
 import commands.PrepairTransferCommand;
+import commands.SaveCustomerCommand;
 import commands.ShowLoginCommand;
 import commands.TransferCommand;
 import dk.cphbusiness.bank.contract.BankManager;
@@ -49,7 +50,7 @@ public class Factory
         commands.put("prepair-transfer", new PrepairTransferCommand("/transactions/transfer.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
         commands.put("transferMoney", new TransferCommand("/transactions/transaction_confirmation.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
         
-        
+        // viewed by superemployess
 //        commands.put("main", new TargetCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("showlogin", new ShowLoginCommand("/login/login.jsp", Arrays.asList(SecurityRole.All)));
 //        
@@ -63,7 +64,8 @@ public class Factory
 //        commands.put("viewcustomer", new ViewCustomerCommand("/employees/viewCustomer.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
         commands.put("employee-main", new TargetCommand("/employees/employeeStartPage.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
 //
-//        commands.put("addcustomer", new AddCustomerCommand("/superEmployee/addCustomer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("create-customer", new TargetCommand("/superEmployee/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("save-customer", new SaveCustomerCommand("/superEmployee/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
 //        commands.put("save-customer", new SaveCustomerCommand("/superEmployee/addCustomer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
     }
 
