@@ -16,7 +16,7 @@
         <div id="wrapper">
             <!-- <li><a href="ListAccounts">list account</a></li>-->
             <a href="Controller?command=list-customers">List customers</a>
-            <a href="Controller?command=create-customer">Create Customer</a>
+            <a href="Controller?command=save-customer">Create Customer</a>
             <!-- <li><a href="Controller?command=list-accounts">List accounts</a></li> -->
         </div>
         <div id="spacer"></div>

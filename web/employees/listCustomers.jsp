@@ -48,6 +48,8 @@
             |
             <a href="Controller?command=main">Back to main page</a>
             |
+            <a href="Controller?command=main">New Customer</a>
+            |
         </div>
         <div id="spacer"></div>
         <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>

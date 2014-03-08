@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>customer registration form</h1>
-        <form action="Controller">
+        <form action="Controller" method="POST">
             <table>
                 <tr>
                     <th><label for="cpr">Cpr. nr.</label></th>
@@ -53,8 +53,10 @@
                     <td><input type="text" name="email" id="email"></td>
                 </tr>
                 <td>
+                    
                     <button type="submit" name="command" value="save-customer" style="padding-left: auto">Accept</button>
-
+                    <button type="submit" name="command" value="list-customers" style="padding-left: auto"> Back to Customers</button>
+                    
                 </td>
 
 
