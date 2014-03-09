@@ -3,6 +3,7 @@ package servlets;
 
 import commands.TargetCommand;
 import commands.Command;
+import commands.CustomerDetailsCommand;
 import commands.ListAccountDetailsCommand;
 import commands.ListAccountsCommand;
 import commands.ListCustomersCommand;
@@ -66,7 +67,10 @@ public class Factory
 //
 //        commands.put("create-customer", new TargetCommand("/superEmployees/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("save-customer", new SaveCustomerCommand("/superEmployees/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
-//        commands.put("save-customer", new SaveCustomerCommand("/superEmployee/addCustomer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("edit-customer", new SaveCustomerCommand("/superEmployees/edit-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("se-list-customers", new ListCustomersCommand("/superEmployees/se-list-customers.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("customer-details", new CustomerDetailsCommand("/superEmployees/customer-details.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+    
     }
 
     public BankManager getManager()
