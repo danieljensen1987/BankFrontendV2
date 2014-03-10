@@ -1,4 +1,3 @@
-
 package commands;
 
 import dk.cphbusiness.bank.contract.BankManager;
