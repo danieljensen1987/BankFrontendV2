@@ -1,9 +1,3 @@
-<%-- 
-    Document   : save-customer
-    Created on : 07-03-2014, 12:22:42
-    Author     : CP
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
