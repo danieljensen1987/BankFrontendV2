@@ -8,3 +8,42 @@ and open the template in the editor.
     Author     : CP
 */
 
+#se-leftside-panel{
+    text-align: center;
+    height: 100px;
+    width: 13%;
+    margin-left: 1%;
+    margin-top:15%;
+    top:0%;
+    position: fixed;
+    padding: 0; 
+    
+}
+
+#se-leftside-spacer{
+    height: 400px;
+    width: 1px;
+    background: radial-gradient(gold,orange);
+    margin-top:13%;
+    margin-left:14%;
+    top:0%;
+    padding: 0;
+    border-radius: 0;
+    position: fixed;
+    
+    
+}
+
+#se-mid{
+    
+    height:300px;
+    width: 782px;
+    margin-left: 19%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    padding: 0;
+    border-radius: 0;
+    top: 0%;
+    overflow: hidden;
+    
+}
