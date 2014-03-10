@@ -25,9 +25,9 @@ public class CreateAccountCommand extends TargetCommand{
     public String execute(HttpServletRequest request) {
     BankManager manager = Factory.getInstance().getManager();
     CustomerIdentifier customer = CustomerIdentifier.fromString(request.getParameter("cpr"));
-    String number = request.getParameter("interest");
+    BigDecimal number = new BigDecimal(request.getParameter("interest"));
         System.out.println("kommer vi her?");
-    AccountDetail account = new CheckingAccountDetail(BigDecimal.valueOf(0.1));
+    AccountDetail account = new CheckingAccountDetail(number);
         try {
             manager.createAccount(customer, account);
             System.out.println("kommer vi herind?");
