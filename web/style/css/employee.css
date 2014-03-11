@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 #se-leftside-panel{
-    text-align: center;
+    text-align: right;
     height: 100px;
     width: 13%;
     margin-left: 1%;
@@ -25,7 +25,7 @@ and open the template in the editor.
     width: 1px;
     background: radial-gradient(gold,orange);
     margin-top:13%;
-    margin-left:14%;
+    margin-left:16%;
     top:0%;
     padding: 0;
     border-radius: 0;

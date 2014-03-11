@@ -58,10 +58,8 @@
             <a href="Controller?command=edit-customer">Edit details</a><br/>
             <a href="Controller?command=list-accounts&cpr=${customer.cpr}">List Accounts</a><br/>
             <a href="Controller?command=prepair-account&cpr=${customer.cpr}">New Account</a><br/>
-            <a href="javascript:history.back">Back to list</a>
-            <br/>
-            <a href="Controller?command=main">Back to main page</a>
-            <br/>
+            <a href="Controller?command=list-customers">Back to list</a><br/>
+            <a href="Controller?command=main">Back to main page</a><br/>
             </div>
         
         <div id="spacer"></div>
