@@ -39,9 +39,11 @@ public class Factory
         roles.put(SecurityRole.SuperEmployee, "/superEmployees/superEmployeeStartPage.jsp");
         roles.put(SecurityRole.Customer, "/customers/startCustomerPage.jsp");
         
-        
         // viewed by all
+        commands.put("login", new LoginCommand(roles, "/login/login.jsp"));
         commands.put("main", new TargetCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
+        commands.put("showlogin", new ShowLoginCommand("/login/login.jsp", Arrays.asList(SecurityRole.All)));
+        commands.put("logout", new LogoutCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
         
         // viewed by customers
         
@@ -51,29 +53,23 @@ public class Factory
         commands.put("list-accounts-detail", new ListAccountDetailsCommand("/employees/account-detail.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
         commands.put("prepair-transfer", new PrepairTransferCommand("/transactions/transfer.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
         commands.put("transferMoney", new TransferCommand("/transactions/transaction_confirmation.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
+        commands.put("employee-main", new TargetCommand("/employees/employeeStartPage.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
         
         // viewed by superemployess
-//        commands.put("main", new TargetCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
-        commands.put("showlogin", new ShowLoginCommand("/login/login.jsp", Arrays.asList(SecurityRole.All)));
-//        
-        commands.put("login", new LoginCommand(roles, "/login/login.jsp"));
-        commands.put("logout", new LogoutCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
-//
-//        commands.put("customer-main", new ViewCurrentCustomer("/customers/startCustomerPage.jsp", Arrays.asList(SecurityRole.Customer)));
-//        commands.put("showcustdetails", new ViewCurrentCustomer("/customers/customerDetails.jsp", Arrays.asList(SecurityRole.Customer)));
-//
-//        commands.put("listcustomers", new ListCustomersCommand("/employees/listCustomers.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
-//        commands.put("viewcustomer", new ViewCustomerCommand("/employees/viewCustomer.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
-        commands.put("employee-main", new TargetCommand("/employees/employeeStartPage.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
+
         commands.put("super-employee-main", new TargetCommand("/superEmployees/superEmployeeStartPage.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
-//
-//        commands.put("create-customer", new TargetCommand("/superEmployees/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("save-customer", new SaveCustomerCommand("/superEmployees/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("edit-customer", new SaveCustomerCommand("/superEmployees/edit-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("se-list-customers", new ListCustomersCommand("/superEmployees/se-list-customers.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("customer-details", new CustomerDetailsCommand("/superEmployees/customer-details.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("create-account", new CreateAccountCommand("/superEmployees/create-account.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("prepair-account", new PrepairAccountCommand("/superEmployees/create-account.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        
+//        commands.put("customer-main", new ViewCurrentCustomer("/customers/startCustomerPage.jsp", Arrays.asList(SecurityRole.Customer)));
+//        commands.put("showcustdetails", new ViewCurrentCustomer("/customers/customerDetails.jsp", Arrays.asList(SecurityRole.Customer)));
+//        commands.put("listcustomers", new ListCustomersCommand("/employees/listCustomers.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
+//        commands.put("viewcustomer", new ViewCustomerCommand("/employees/viewCustomer.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
+//        commands.put("create-customer", new TargetCommand("/superEmployees/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
     
     }
 

@@ -1,4 +1,3 @@
-
 package commands;
 
 import dk.cphbusiness.bank.contract.BankManager;
@@ -24,7 +23,7 @@ public class SaveCustomerCommand extends TargetCommand {
         String l_name = request.getParameter("l_name");
         String street = request.getParameter("street");
         String postal_code = request.getParameter("postal-code");
-        String postal_district = request.getParameter("postal-distrct");
+        String postal_district = request.getParameter("postal-district");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
 

@@ -23,6 +23,6 @@ public class LogoutCommand extends TargetCommand{
     } catch (ServletException ex) {
       Logger.getLogger(LogoutCommand.class.getName()).log(Level.SEVERE, null, ex);
     }
-    return super.execute(request); //To change body of generated methods, choose Tools | Templates.
+    return super.execute(request); 
   }
 }

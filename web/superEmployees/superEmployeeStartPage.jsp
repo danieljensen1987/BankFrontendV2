@@ -19,6 +19,7 @@
             <!-- <li><a href="ListAccounts">list account</a></li>-->
             <a href="Controller?command=se-list-customers">List customers</a><br/>
             <a href="Controller?command=save-customer">Create Customer</a>
+            <a href="Controller?command=prepair-account">Create Account</a>
             <!-- <li><a href="Controller?command=list-accounts">List accounts</a></li> -->
         </div>
         <div id="se-leftside-spacer"></div>

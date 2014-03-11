@@ -5,13 +5,17 @@
         <a href="Controller?command=customer-main">Customer main page</a>
     </c:if >
 
-    <c:if test="${pageContext.request.isUserInRole('Employee')==true || 
-                  pageContext.request.isUserInRole('SuperEmployee')==true}">
-          <a href="Controller?command=employee-main">Employee Main page</a>
+    <c:if test="${pageContext.request.isUserInRole('Employee')==true}">
+        <a href="Controller?command=employee-main">Employee Main page</a>
     </c:if>
 
     <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
-        <a href="Controller?command=addcustomer">Add Customer</a>
+        <a href="Controller?command=super-employee-main">Super Employee Main page</a>
+        <a href="Controller?command=employee-main">Employee Main page</a>
+    </c:if>
+
+    <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
+        <a href="Controller?command=save-customer">Add Customer</a>
     </c:if>
 
     <c:choose >

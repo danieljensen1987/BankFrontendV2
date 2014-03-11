@@ -1,6 +1,5 @@
 package commands;
 
-
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import security.SecurityRole;
@@ -21,11 +20,9 @@ public class TargetCommand implements Command
         return roles;
     }
     
-
     @Override
     public String execute(HttpServletRequest request)
     {
         return target;
     }
-
 }

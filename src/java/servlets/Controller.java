@@ -25,12 +25,9 @@ public class Controller extends HttpServlet {
        
     String cmdStr = request.getParameter("command");
     cmdStr = cmdStr!=null ? cmdStr: "main";
-    // tjek lige hvem der må køre det her (metode skal laves)
     Command command = Factory.getInstance().getCommand(cmdStr,request);
     String path = command.execute(request);
-    //request.getRequestDispatcher(path).forward(request, response);
     
-	//Remove the line above (its duplicated below) and this line 
     if (command instanceof ShowLoginCommand && !request.isSecure()) {
       String SSL = "https://" + request.getServerName() + ":" + PORT_SSL + request.getRequestURI() + "?command=showlogin";
       System.out.println("SSL redirect: " + SSL);
