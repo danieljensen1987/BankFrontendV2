@@ -29,6 +29,7 @@ public class EditCustomerCommand extends TargetCommand {
             Logger.getLogger(EditCustomerCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        
         request.setAttribute("customer", customer);
         return super.execute(request);
     }

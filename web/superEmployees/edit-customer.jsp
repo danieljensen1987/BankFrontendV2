@@ -9,7 +9,10 @@
         <h1>Edit Customer form</h1>
         <form action="Controller" method="POST">
             <table>
-               
+               <tr>
+                    <th><label for="cpr">Cpr</label></th>
+                    <td><input type="text" name="cpr" id="cpr" value="${customer.cpr}"></td>
+                </tr>
                 <tr>
                     <th><label for="title">Title</label></th>
                     <td><input type="text" name="title" id="title" value="${customer.title}"></td>
