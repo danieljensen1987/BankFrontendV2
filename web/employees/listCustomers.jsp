@@ -16,9 +16,12 @@
     </head>
     <body>
         <div id="banner">
-            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
+            
         </div>
         <div id="spacer"></div>
+        <div id="main_menubar">
+            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
+        </div>
         <div id="wrapper">
         <!--${message} for ${customer.cpr} 
         <br/> -->

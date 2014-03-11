@@ -10,9 +10,12 @@
     </head>
     <body>
         <div id="banner">
-            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
+           
         </div>
         <div id="spacer"></div>
+        <div id="main_menubar">
+            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
+        </div>
         <div id="wrapper">
             <!-- <li><a href="ListAccounts">list account</a></li>-->
             <a href="Controller?command=list-customers">List customers</a>
