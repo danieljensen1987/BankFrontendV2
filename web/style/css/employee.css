@@ -41,7 +41,11 @@ and open the template in the editor.
     margin-left: 19%;
     margin-top: 2%;
     margin-bottom: 4%;
-    background-color: antiquewhite;
+    background-color: whitesmoke;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-left-color: #e4e1e1;
+    border-right-color:#e4e1e1;
     padding: 0;
     border-radius: 0;
     top: 0%;
