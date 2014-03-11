@@ -4,6 +4,7 @@ import commands.TargetCommand;
 import commands.Command;
 import commands.CreateAccountCommand;
 import commands.CustomerDetailsCommand;
+import commands.EditCustomerCommand;
 import commands.ListAccountDetailsCommand;
 import commands.ListAccountsCommand;
 import commands.ListCustomersCommand;
@@ -59,7 +60,7 @@ public class Factory
 
         commands.put("super-employee-main", new TargetCommand("/superEmployees/superEmployeeStartPage.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("save-customer", new SaveCustomerCommand("/superEmployees/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
-        commands.put("edit-customer", new SaveCustomerCommand("/superEmployees/edit-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("edit-customer", new EditCustomerCommand("/superEmployees/edit-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("se-list-customers", new ListCustomersCommand("/superEmployees/se-list-customers.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("customer-details", new CustomerDetailsCommand("/superEmployees/customer-details.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("create-account", new CreateAccountCommand("/superEmployees/create-account.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
