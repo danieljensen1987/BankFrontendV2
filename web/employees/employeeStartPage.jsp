@@ -9,19 +9,21 @@
         <title>cphbank - Emplyee</title>
     </head>
     <body>
-        <div id="banner">
-           
-        </div>
-        <div id="spacer"></div>
+        <div id="banner"></div>
         <div id="main_menubar">
-            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
+            <%@include file="../style/imp_scripts/menuTop.jsp" %>
         </div>
+
         <div id="wrapper">
-            <!-- <li><a href="ListAccounts">list account</a></li>-->
-            <a href="Controller?command=list-customers">List customers</a>
-            <!-- <li><a href="Controller?command=list-accounts">List accounts</a></li> -->
+            <div id="menu_left">
+                <%@include file="../style/imp_scripts/menuLeft.jsp" %>
+            </div>
+            <div id="content">
+                <!-- <li><a href="ListAccounts">list account</a></li>-->
+                <a href="Controller?command=list-customers">List customers</a>
+                <!-- <li><a href="Controller?command=list-accounts">List accounts</a></li> -->
+            </div>
         </div>
-        <div id="spacer"></div>
         <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
     </body>
 </html>

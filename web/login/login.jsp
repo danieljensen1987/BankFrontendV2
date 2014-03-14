@@ -10,13 +10,13 @@
             label {display: block;width: 8em;text-align: left;float: left;}
             #loginField {margin-left: auto;margin-right:auto ;margin-top :2em;width:20em;}
         </style>
-        <title>Login Page</title>
+        <title>Cphbank Login Page</title>
     </head>
     <body>
-        <div id="banner">
-            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
+        <div id="banner"></div>
+        <div id="main_menubar">
+            <%@include file="../style/imp_scripts/menuTop.jsp" %>
         </div>
-        <div id="spacer"></div>
         <div id="wrapper">
             <fieldset id='loginField'>
                 <legend>Login</legend>
@@ -29,7 +29,6 @@
                 <p style='color:red'>${loginerror}</p>
             </fieldset>
         </div>
-        <div id="spacer"></div>
         <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
     </body>
 </html>

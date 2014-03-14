@@ -10,52 +10,49 @@
             }
         </script>
         <link rel="stylesheet" href="/BankFrontend/style/css/default.css"/>
-        <link rel="stylesheet" href="/BankFrontend/style/css/employee.css"/>
+        <link rel="stylesheet" href="/BankFrontend/style/css/wrapper.css"/>
         <link rel="shortcut icon" href="/BankFrontend/style/gfx/favicon.ico" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>cphbank customer list</title>
     </head>
     <body>
-        <div id="banner">
-            
-        </div>
-        <div id="spacer"></div>
+        <div id="banner"></div>
         <div id="main_menubar">
-            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
+            <%@include file="../style/imp_scripts/menuTop.jsp" %>
         </div>
-        <div id="se-mid">
+        <div id="wrapper">
+            <div id="menu_left">
+                <%@include file="../style/imp_scripts/menuLeft.jsp" %>
+            </div>
+            <div id="content">
         <!--${message} for ${customer.cpr} 
         <br/> -->
-            There are ${customers.size()} accounts at the moment:
-            <table class="customers">
-                <tr>
-                    <th>CPR</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <!-- <th>Action</th> -->
-                </tr>
-                <c:forEach var = "customer" items = "${customers}">
-                    <tr class="customers" onclick="DoNav('Controller?command=customer-details&cpr=${customer.cpr}')">
-                        <td>${customer.cpr}</td>
-                        <td>${customer.name}</td>
-                        <td>${customer.address}</td>
-                        <td>${customer.phone}</td>
-                        <td>${customer.email}</td>
-                        <!-- <td><a href="Controller?command=list-accounts&cpr=${customer.cpr}">Select Account</a></td> -->
+                There are ${customers.size()} accounts at the moment:
+                <table class="customers">
+                    <tr>
+                        <th>CPR</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <!-- <th>Action</th> -->
                     </tr>
-                </c:forEach>
-            </table>
+                    <c:forEach var = "customer" items = "${customers}">
+                        <tr class="customers" onclick="DoNav('Controller?command=customer-details&cpr=${customer.cpr}')">
+                            <td>${customer.cpr}</td>
+                            <td>${customer.name}</td>
+                            <td>${customer.address}</td>
+                            <td>${customer.phone}</td>
+                            <td>${customer.email}</td>
+                            <!-- <td><a href="Controller?command=list-accounts&cpr=${customer.cpr}">Select Account</a></td> -->
+                        </tr>
+                    </c:forEach>
+                </table>
+                <a href="Controller?command=main">Back to main page</a>
+                |
+                <a href="Controller?command=save-customer">New Customer</a>
             </div>
-            <div id="se-leftside-spacer"></div>
-            <div id="se-leftside-panel">
-            <a href="Controller?command=main">Back to main page</a>
-            <br/>
-            <a href="Controller?command=save-customer">New Customer</a>
-            
-        
-        <div id="spacer"></div>
-        <div id="footer" style="margin-left:138%; margin-right: 138%;margin-bottom: 0;margin-top: 170%">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
+        </div>
+        <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
     </body>
 </html>

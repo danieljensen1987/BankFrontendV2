@@ -9,43 +9,42 @@
         <title>cphbank transfer Page</title>
     </head>
     <body>
-        <div id="banner">
-            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
+        <div id="banner"></div>
+        <div id="main_menubar">
+            <%@include file="../style/imp_scripts/menuTop.jsp" %>
         </div>
-        <div id="spacer"></div>
         <div id="wrapper">
-            ${message} ${accountNumber}
-            <form action="Controller">
-                <table>
-                    <tr>
-                        <th><label for="source">From Account</label></th>
-                        <td><input type="text" name="source" id="source"></td>
+            <div id="menu_left">
+                <%@include file="../style/imp_scripts/menuLeft.jsp" %>
+            </div>
+            <div id="content">
+                ${message} ${accountNumber}
+                <form action="Controller">
+                    <table>
+                        <tr>
+                            <th><label for="source">From Account</label></th>
+                            <td><input type="text" name="source" id="source"></td>
 
-                    </tr>
-                    <tr>
-                        <th><label for="target">To Account</label></th>
-                        <td><input type="text" name="target" id="target"></td>
-                    </tr>
-                    <tr>
-                        <th><label for="amount">Amount</label></th>
-                        <td><input type="number" name="amount" id="amount"></td>
-                    </tr>
-                    <tr>
-                        <th><label for="date">Date</label></th>
-                        <td><input type="date" name="date" id="date"></td>
-                    </tr>
-
-                    <td>
-                        <button type="submit" name="command" value="transferMoney" style="padding-left: auto">Accept</button>
-
-                    </td>
-
-
-                </table>
-
-            </form> 
+                        </tr>
+                        <tr>
+                            <th><label for="target">To Account</label></th>
+                            <td><input type="text" name="target" id="target"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="amount">Amount</label></th>
+                            <td><input type="number" name="amount" id="amount"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="date">Date</label></th>
+                            <td><input type="date" name="date" id="date"></td>
+                        </tr>
+                        <td>
+                            <button type="submit" name="command" value="transferMoney" style="padding-left: auto">Accept</button>
+                        </td>
+                    </table>
+                </form> 
+            </div>
         </div>
-        <div id="spacer"></div>
         <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
     </body>
 </html>

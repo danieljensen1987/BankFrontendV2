@@ -8,11 +8,13 @@ import commands.EditCustomerCommand;
 import commands.ListAccountDetailsCommand;
 import commands.ListAccountsCommand;
 import commands.ListCustomersCommand;
+import commands.ListPersonCommand;
 import commands.LoginCommand;
 import commands.LogoutCommand;
 import commands.PrepairTransferCommand;
 import commands.PrepairAccountCommand;
 import commands.SaveCustomerCommand;
+import commands.SayHelloCommand;
 import commands.ShowLoginCommand;
 import commands.TransferCommand;
 import dk.cphbusiness.bank.contract.BankManager;
@@ -21,20 +23,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import security.SecurityRole;
 
 public class Factory
 {
-
+    
+    BankManager manager;
     private static Factory instance = new Factory();
     private final Map<String, Command> commands = new HashMap<>();
-    private final BankManager manager;
+    
 
     private Factory()
     {
         
-        manager = new DummyBankManager();
+        //manager = new DummyBankManager();
+        manager = lookupBankManagerBeanRemote();
         Map<SecurityRole, String> roles = new HashMap();
         roles.put(SecurityRole.Employee, "/employees/employeeStartPage.jsp");
         roles.put(SecurityRole.SuperEmployee, "/superEmployees/superEmployeeStartPage.jsp");
@@ -45,6 +54,8 @@ public class Factory
         commands.put("main", new TargetCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("showlogin", new ShowLoginCommand("/login/login.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("logout", new LogoutCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
+        commands.put("greeting", new SayHelloCommand("/all/hello.jsp", Arrays.asList(SecurityRole.All)));
+        commands.put("persons", new ListPersonCommand("/all/person-list.jsp", Arrays.asList(SecurityRole.All)));
         
         // viewed by customers
         
@@ -79,6 +90,12 @@ public class Factory
         return manager;
     }
 
+    public void setManager(BankManager manager)
+    {
+        this.manager = manager;
+    }
+    
+
     
     public Command getCommand(String cmdStr, HttpServletRequest request)
     {
@@ -110,5 +127,16 @@ public class Factory
     public static Factory getInstance()
     {
         return instance;
+    }
+
+    private BankManager lookupBankManagerBeanRemote()
+    {
+        try {
+            Context c = new InitialContext();
+            return (BankManager) c.lookup("java:global/BankBackend/BankManagerBean!dk.cphbusiness.bank.contract.BankManager");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
     }
 }
