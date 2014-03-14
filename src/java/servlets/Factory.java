@@ -18,7 +18,7 @@ import commands.SayHelloCommand;
 import commands.ShowLoginCommand;
 import commands.TransferCommand;
 import dk.cphbusiness.bank.contract.BankManager;
-import dk.cphbusiness.dummy.bank.control.DummyBankManager;
+//import dk.cphbusiness.dummy.bank.control.DummyBankManager;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Arrays;
