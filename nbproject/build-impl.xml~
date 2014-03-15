@@ -856,25 +856,15 @@ exists or setup the property manually. For example like this:
         <ant antfile="${project.BankContract}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
-        <ant antfile="${project.BankContract}/build.xml" inheritall="false" target="jar">
-            <property name="deploy.on.save" value="false"/>
-        </ant>
         <ant antfile="${project.BankDummyBackend}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
-       
     </target>
     <target depends="init" if="dist.ear.dir" name="deps-ear-jar" unless="no.deps">
         <ant antfile="${project.BankContract}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
-        <ant antfile="${project.BankContract-1}/build.xml" inheritall="false" target="jar">
-            <property name="deploy.on.save" value="false"/>
-        </ant>
         <ant antfile="${project.BankDummyBackend}/build.xml" inheritall="false" target="jar">
-            <property name="deploy.on.save" value="false"/>
-        </ant>
-        <ant antfile="${project.BankDummyBackend-1}/build.xml" inheritall="false" target="jar">
             <property name="deploy.on.save" value="false"/>
         </ant>
     </target>
@@ -1443,7 +1433,7 @@ exists or setup the property manually. For example like this:
             -->
     <target depends="init" name="deps-clean" unless="no.deps">
         <ant antfile="${project.BankContract}/build.xml" inheritall="false" target="clean"/>
-        <ant antfile="${project.BankDummyBackend}/build.xml" inheritall="false" target="clean"/>
+       <!-- <ant antfile="${project.BankDummyBackend}/build.xml" inheritall="false" target="clean"/> -->
     </target>
     <target depends="init" name="do-clean">
         <condition property="build.dir.to.clean" value="${build.web.dir}">
@@ -1453,7 +1443,7 @@ exists or setup the property manually. For example like this:
         <delete includeEmptyDirs="true" quiet="true">
             <fileset dir="${build.dir.to.clean}/WEB-INF/lib"/>
         </delete>
-<!--        <delete dir="${build.dir}"/> -->
+        <!--<delete dir="${build.dir}"/>-->
         <available file="${build.dir.to.clean}/WEB-INF/lib" property="status.clean-failed" type="dir"/>
         <delete dir="${dist.dir}"/>
     </target>
