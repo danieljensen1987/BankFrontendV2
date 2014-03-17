@@ -8,7 +8,6 @@ import commands.EditCustomerCommand;
 import commands.ListAccountDetailsCommand;
 import commands.ListAccountsCommand;
 import commands.ListCustomersCommand;
-import commands.ListPersonCommand;
 import commands.LoginCommand;
 import commands.LogoutCommand;
 import commands.PrepairTransferCommand;
@@ -55,7 +54,6 @@ public class Factory
         commands.put("showlogin", new ShowLoginCommand("/login/login.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("logout", new LogoutCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("greeting", new SayHelloCommand("/all/hello.jsp", Arrays.asList(SecurityRole.All)));
-        commands.put("persons", new ListPersonCommand("/all/person-list.jsp", Arrays.asList(SecurityRole.All)));
         
         // viewed by customers
         

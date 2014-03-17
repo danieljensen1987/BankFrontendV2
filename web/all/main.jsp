@@ -32,7 +32,6 @@
                                     <a id="videocontainer_sidemenu_link" href="newCustomer.jsp">Become a customer</a><br/><br/>
                                     
                                     <a href="Controller?command=greeting">Kom til mig!</a>
-                                    <a href="Controller?command=persons">List of persons</a>
 
 
                                 </div></td></tr></table>
