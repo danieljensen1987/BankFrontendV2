@@ -26,14 +26,14 @@ public class ListAccountsCommand extends TargetCommand
         BankManager manager = Factory.getInstance().getManager();
         CustomerIdentifier customer = CustomerIdentifier.fromString(request.getParameter("cpr"));
         Collection<AccountSummary> accounts = manager.listCustomerAccounts(customer);
-        AccountDetail ad = manager.showAccountHistory(new AccountIdentifier(accounts.iterator().next().getNumber()));
+      //  AccountDetail ad = manager.showAccountHistory(new AccountIdentifier(accounts.iterator().next().getNumber()));
        // AccountIdentifier acid = AccountIdentifier.fromString(request.getParameter("number"));
         
       //  Double interest = manager.showAccountHistory(acid).getInterest().doubleValue();
         //request.setAttribute("accounts", accounts);
         request.getSession().setAttribute("accounts", accounts);
         request.getSession().setAttribute("cpr", customer.getCpr());
-        request.setAttribute("accountDetails", ad);
+      //  request.setAttribute("accountDetails", ad);
         request.setAttribute("message", "This is a test");
         request.setAttribute("customer", customer);
         //request.setAttribute("cpr", customer.getCpr());
