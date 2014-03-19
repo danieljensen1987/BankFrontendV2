@@ -13,14 +13,9 @@
     <body>
         <div id="banner"></div>
         <div id="main_menubar">
-            <%@include file="../style/imp_scripts/menuTop.jsp" %>
+            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
         </div>
-
-       
-            <div id="menu_left">
-                <%@include file="../style/imp_scripts/menuLeft.jsp" %>
-            </div>
-            <div id="se-mid">
+        <div id="se-mid">
                 Details for account: ${accountNumber} ${cpr}
                 <br/>
                 <table>

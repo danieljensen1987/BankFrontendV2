@@ -4,7 +4,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="/BankFrontend/style/css/default.css"/>
-        <link rel="stylesheet" href="/BankFrontend/style/css/wrapper.css"/>
+        <link rel="stylesheet" href="/BankFrontend/style/css/employee.css"/>
         <link rel="shortcut icon" href="/BankFrontend/style/gfx/favicon.ico" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CphBank - SuperEmployee Page</title>
