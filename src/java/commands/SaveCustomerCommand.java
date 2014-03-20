@@ -31,7 +31,8 @@ public class SaveCustomerCommand extends TargetCommand {
                 street, postal_code, postal_district, phone, email);
         
         manager.saveCustomer(cd);
-        request.setAttribute("command", "se-list-customers");
+        request.setAttribute("command", "customer-details");
+        request.setAttribute("cpr", cpr);
         return super.execute(request);
     }
 }

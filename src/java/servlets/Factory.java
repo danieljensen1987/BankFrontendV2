@@ -69,6 +69,7 @@ public class Factory
 
         commands.put("super-employee-main", new TargetCommand("/superEmployees/superEmployeeStartPage.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("save-customer", new SaveCustomerCommand("/superEmployees/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("create-customer", new TargetCommand("/superEmployees/save-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("edit-customer", new EditCustomerCommand("/superEmployees/edit-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("se-list-customers", new ListCustomersCommand("/superEmployees/se-list-customers.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("customer-details", new CustomerDetailsCommand("/superEmployees/customer-details.jsp", Arrays.asList(SecurityRole.SuperEmployee)));

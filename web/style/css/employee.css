@@ -36,14 +36,16 @@ and open the template in the editor.
 
 #se-mid{
     
-    height:300px;
+    height:400px;
     width: 782px;
     margin-left: 19%;
     margin-top: 2%;
-    margin-bottom: 4%;
+    margin-bottom: 0%;
     background-color: whitesmoke;
     border-left-style: solid;
+    border-left-width: 1px;
     border-right-style: solid;
+    border-right-width: 1px;
     border-left-color: #e4e1e1;
     border-right-color:#e4e1e1;
     padding: 0;
