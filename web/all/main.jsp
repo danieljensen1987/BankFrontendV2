@@ -26,7 +26,7 @@
                             <td id="videotable_menu_main"><div id = "main_top_right_cell">
 
                                     <br/><br/><br/><br/>       
-                                    <a id="videocontainer_sidemenu_link" href="../login/login.jsp">Login</a><br/><br/>
+                                    <a id="videocontainer_sidemenu_link" href="Controller?command=showlogin">Login</a><br/><br/>
                                     <a id="videocontainer_sidemenu_link" href="messageToBank.jsp">Write us a message</a><br/><br/>
                                     <a id="videocontainer_sidemenu_link" href="contact.jsp">Contact</a><br/><br/>
                                     <a id="videocontainer_sidemenu_link" href="newCustomer.jsp">Become a customer</a><br/><br/>

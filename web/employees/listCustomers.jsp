@@ -28,6 +28,7 @@
                 <table class="customer">
                     <tr>
                         <th>CPR</th>
+                        <th>Title</th>
                         <th>Name</th>
                         <th>Address</th>
                         <th>Phone</th>
@@ -37,6 +38,7 @@
                     <c:forEach var = "customer" items = "${customers}">
                         <tr class="customers" onclick="DoNav('Controller?command=list-accounts&cpr=${customer.cpr}')">
                             <td>${customer.cpr}</td>
+                            <td>${customer.title}</td>
                             <td>${customer.name}</td>
                             <td>${customer.address}</td>
                             <td>${customer.phone}</td>

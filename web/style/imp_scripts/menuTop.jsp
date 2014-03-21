@@ -15,7 +15,7 @@
     </c:if>
 
     <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
-        <a href="Controller?command=save-customer">| New Customer</a>
+        <a href="Controller?command=create-customer">| New Customer</a>
     </c:if>
 
     <c:choose >

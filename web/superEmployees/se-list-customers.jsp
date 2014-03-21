@@ -28,6 +28,7 @@
                 <table class="customers">
                     <tr>
                         <th>CPR</th>
+                        <th>Title</th>
                         <th>Name</th>
                         <th>Address</th>
                         <th>Phone</th>
@@ -37,6 +38,7 @@
                     <c:forEach var = "customer" items = "${customers}">
                         <tr class="customers" onclick="DoNav('Controller?command=customer-details&cpr=${customer.cpr}')">
                             <td>${customer.cpr}</td>
+                            <td>${customer.title}</td>
                             <td>${customer.name}</td>
                             <td>${customer.address}</td>
                             <td>${customer.phone}</td>
@@ -49,7 +51,7 @@
                 <div id="se-leftside-spacer"></div>
                 <div id="se-leftside-panel">
                     <li><a href="Controller?command=main">Back to main page</a></li>
-                    <li><a href="Controller?command=save-customer">New Customer</a></li>
+                    <li><a href="Controller?command=create-customer">New Customer</a></li>
                 </div>
         <div id="spacer"></div>
         <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
