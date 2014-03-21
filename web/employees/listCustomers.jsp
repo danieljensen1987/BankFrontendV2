@@ -51,7 +51,7 @@
                 <div id="se-leftside-spacer"></div>
                 <div id="se-leftside-panel">
                     <li><a href="Controller?command=main">Back to main page</a></li>
-                    <li><a href="Controller?command=main">New Customer</a></li>
+                    <li><a href="Controller?command=create-customer">New Customer</a></li>
                 </div>
                 
         <div id="spacer"></div>
