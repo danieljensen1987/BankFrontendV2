@@ -19,16 +19,16 @@ public class SaveCustomerCommand extends TargetCommand {
         BankManager manager = Factory.getInstance().getManager();
         String cpr = request.getParameter("cpr");
         String title = request.getParameter("title");
-        String f_name = request.getParameter("f_name");
-        String l_name = request.getParameter("l_name");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
         String street = request.getParameter("street");
-        String postal_code = request.getParameter("postal-code");
-        String postal_district = request.getParameter("postal-district");
+        String postalCode = request.getParameter("postalCode");
+        String postalDistrict = request.getParameter("postalDistrict");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
 
-        CustomerDetail cd = new CustomerDetail(cpr, title, f_name, l_name,
-                street, postal_code, postal_district, phone, email);
+        CustomerDetail cd = new CustomerDetail(cpr, title, firstName, lastName,
+                street, postalCode, postalDistrict, phone, email);
         
         manager.saveCustomer(cd);
         request.setAttribute("command", "customer-details");

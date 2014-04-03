@@ -15,7 +15,7 @@
     <body>
         <div id="banner"></div>
         <div id="main_menubar">
-            <%@include file="../style/imp_scripts/menuTop.jsp" %>
+            <%@include file="../scripts/jsp/menuTop.jsp" %>
         </div>
         <div id="wrapper">
             <fieldset id='loginField'>
