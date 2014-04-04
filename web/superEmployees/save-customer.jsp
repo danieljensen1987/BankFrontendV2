@@ -4,91 +4,12 @@
     <head>
         <link rel="stylesheet" href="/BankFrontend/style/css/default.css"/>
         <link rel="stylesheet" href="/BankFrontend/style/css/employee.css"/>
-        <link rel="shortcut icon" href="/BankFrontend/style/gfx/favicon.ico" type="image/x-icon" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <style >
-            .container {width:45em;border: lightgray thin solid; padding: 1em; 
-                        margin-left: auto;margin-right: auto;margin-top: 2em;margin-bottom: 3%;font-family: sans-serif;}
-            #myform label {
-                display: block;  width: 6em;text-align: left;
-                float: left;margin-right: 0.5em;
-            }
-            fieldset {margin-bottom: 0.6em;}
-            .fs1 {float: left; margin-right: 0.5em;} 
-            .fs2 {clear: both;} 
-        </style>
-        <style type="text/css">
-            #myform label.error {
-                color:red; width:auto; font-size: small;
-                float : right; display: block;
-            }
-            #myform input.error {
-                border:1px solid red;
-            }
-        </style>
-
         <script src="/BankFrontend/scripts/js/jquery-1.9.1.js"></script>
-        <!--    <script src="js/jquery.validate.js"></script>-->
-        <script src="/BankFrontend/scripts/js/validate.js"></script>
-        <script>
-            $(document).ready(function() {
-                // validate the comment form when it is submitted
-                jQuery.validator.addMethod("lettersonly", function(value, element) {
-                    return this.optional(element) || /^[a-å]+$/i.test(value);
-                }, "Only letters");
-                jQuery.validator.addMethod("numbersonly", function(value, element) {
-                    return this.optional(element) || /^[0-9]+$/i.test(value);
-                }, "Only numbers");
-                $("#myform").validate({
-                    rules: {
-                        cpr: {required: true, minlength: 11, remote: "LookUpCprServlet"},
-                        firstName: {required: true, minlength: 2, lettersonly: true},
-                        lastName: {required: true, minlength: 2, lettersonly: true},
-                        street: {required: true, minlength: 2, lettersonly: true},
-                        postalCode: {required: true, minlength: 4, numbersonly: true},
-                        postalDistrict: {required: true, minlength: 2, lettersonly: true},
-                        phone: {required: true, minlength: 8, numbersonly: true},
-                        email: {required: true, email: true}
-                    },
-                    messages: {
-                        cpr: {
-                            required: "Please enter your CPR number",
-                            minlength: jQuery.format("At least {0} characters required!"),
-                            remote: "Already excist"
-                        },
-                        firstName: {
-                            required: "Please enter you first name",
-                            minlength: jQuery.format("At least {0} characters required!")
-                        },
-                        lastName: {
-                            required: "Please enter your last name",
-                            minlength: jQuery.format("At least {0} characters required!")
-                        },
-                        street: {
-                            required: "Please enter your address",
-                            minlength: jQuery.format("At least {0} characters required!")
-                        },
-                        postalCode: {
-                            required: "Please enter your postal code",
-                            minlength: jQuery.format("At least {0} characters required!")
-                        },
-                        postalDistrict: {
-                            required: "Please enter your city",
-                            minlength: jQuery.format("At least {0} characters required!")
-                        },
-                        phone: {
-                            required: "Please enter your phone number",
-                            minlength: jQuery.format("At least {0} characters required!")
-                        },
-                        email: {
-                            required: "Please enter your mail"
-                        }
-                    }
-                    //          ,
-                    //          errorLabelContainer: "#errors", wrapper: "div"
-                });
-            });
-        </script>
+        <script src = "/BankFrontend/scripts/js/validate.js"></script>
+        <link rel="stylesheet" href="/BankFrontend/style/css/validation.css"/>
+        <link rel="shortcut icon" href="/BankFrontend/style/gfx/favicon.ico" type="image/x-icon" />
+        <script><%@include file="../scripts/js/ValidationRules.js" %></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>customer registration form</title>
     </head>
     <body>
