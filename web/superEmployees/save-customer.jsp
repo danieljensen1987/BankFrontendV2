@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style >
             .container {width:45em;border: lightgray thin solid; padding: 1em; 
-                        margin-left: auto;margin-right: auto;margin-top: 2em;font-family: sans-serif;}
+                        margin-left: auto;margin-right: auto;margin-top: 2em;margin-bottom: 3%;font-family: sans-serif;}
             #myform label {
                 display: block;  width: 6em;text-align: left;
                 float: left;margin-right: 0.5em;
@@ -146,13 +146,15 @@
                 </fieldset>
                 <p>
                     <button type="submit" name="command" value="save-customer" style="padding-left: auto">Accept</button>
-                    <button type="submit" name="command" value="list-customers" style="padding-left: auto"> Back to Customers</button>
+                    
                 </p>
-                
             </form>
+            
         </div>
         <div id="se-leftside-spacer"></div>
-        <div id="spacer"></div>
+        <div id="se-leftside-panel">
+            <a href="Controller?command=se-list-customers" style="padding-left: auto"> Back to Customers</a>
+        </div>
         <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
     </body>
 </html>
