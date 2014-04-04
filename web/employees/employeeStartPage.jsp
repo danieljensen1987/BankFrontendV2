@@ -11,7 +11,7 @@
     <body>
         <div id="banner"></div>
         <div id="main_menubar">
-            <%@include file="../style/imp_scripts/loginLogoutButton.jsp" %>
+            <%@include file="../scripts/jsp/loginLogoutButton.jsp" %>
         </div>
             <div id="se-mid">
                 <!-- <li><a href="ListAccounts">list account</a></li>-->

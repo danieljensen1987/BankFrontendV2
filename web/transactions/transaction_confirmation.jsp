@@ -9,11 +9,11 @@
     <body>
         <div id="banner"></div>
         <div id="main_menubar">
-            <%@include file="../style/imp_scripts/menuTop.jsp" %>
+            <%@include file="../scripts/jsp/menuTop.jsp" %>
         </div>
         <div id="wrapper">
             <div id="menu_left">
-                <%@include file="../style/imp_scripts/menuLeft.jsp" %>
+                <%@include file="../scripts/jsp/menuLeft.jsp" %>
             </div>
             <div id="content">
                 <div style="margin-left: auto;margin-right: auto;text-align: center;background-color: white">
