@@ -34,14 +34,14 @@
             $(document).ready(function() {
                 // validate the comment form when it is submitted
                 jQuery.validator.addMethod("lettersonly", function(value, element) {
-                    return this.optional(element) || /^[a-z]+$/i.test(value);
+                    return this.optional(element) || /^[a-å]+$/i.test(value);
                 }, "Only letters");
                 jQuery.validator.addMethod("numbersonly", function(value, element) {
                     return this.optional(element) || /^[0-9]+$/i.test(value);
                 }, "Only numbers");
                 $("#myform").validate({
                     rules: {
-                        cpr: {required: true, minlength: 11, remote: "EmailServlet"},
+                        cpr: {required: true, minlength: 11, remote: "LookUpCprServlet"},
                         firstName: {required: true, minlength: 2, lettersonly: true},
                         lastName: {required: true, minlength: 2, lettersonly: true},
                         street: {required: true, minlength: 2, lettersonly: true},
