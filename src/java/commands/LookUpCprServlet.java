@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import servlets.Factory;
 
-@WebServlet(name = "EmailServlet", urlPatterns = {"/EmailServlet"})
-public class EmailServlet extends HttpServlet
+@WebServlet(name = "LookUpCprServlet", urlPatterns = {"/LookUpCprServlet"})
+public class LookUpCprServlet extends HttpServlet
 {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
