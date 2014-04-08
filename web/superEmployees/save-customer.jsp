@@ -11,6 +11,24 @@
         <script><%@include file="../scripts/js/ValidationRules.js" %></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>customer registration form</title>
+        <script>
+            function getResult(){
+                $.ajax({
+                    url: "WannabeKrak",
+                    cache: false,
+                    data: {
+                        phone: $("#phone").val()
+                    },
+                    dataType: "json"}).done(function(data){
+                    $("#firstName").val(data.firstName);
+                    $("#lastName").val(data.lastName);
+                    $("#street").val(data.address);
+                    $("#postalDistrict").val(data.city);
+                    $("#postalCode").val(data.zip);
+                    $("#email").val(data.email);
+                    });
+            }
+        </script>
     </head>
     <body>
         <div id="banner"></div>
@@ -70,7 +88,7 @@
                     
                 </p>
             </form>
-            
+            <input type="submit" onclick="getResult()">
         </div>
         <div id="se-leftside-spacer"></div>
         <div id="se-leftside-panel">

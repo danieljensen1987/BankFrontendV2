@@ -1,40 +1,66 @@
-package commands;
+package servlets;
 
-import dk.cphbusiness.bank.contract.BankManager;
-import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.Authenticator;
+import java.net.HttpURLConnection;
+import java.net.PasswordAuthentication;
+import java.net.URL;
+import java.util.Scanner;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import servlets.Factory;
 
-@WebServlet(name = "LookUpCprServlet", urlPatterns = {"/LookUpCprServlet"})
-public class LookUpCprServlet extends HttpServlet
+@WebServlet(name = "WannabeKrak", urlPatterns = {"/WannabeKrak"})
+public class WannabeKrak extends HttpServlet
 {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
         response.setContentType("text/html;charset=UTF-8");
-        BankManager manager = Factory.getInstance().getManager();
-        CustomerIdentifier cpr = CustomerIdentifier.fromString(request.getParameter("cpr"));
-        boolean res = manager.doesUserExist(cpr);
-        
-//        String cprs[] = {"090912-1111","090912-2222","090912-3333"};
-//        String cpr = request.getParameter("cpr");
-//        boolean res = true;
-//        for (String c : cprs){
-//            if (cpr.equals(c)){
-//                res = false;
-//            }
-//        }
-        
+        String phone = request.getParameter("phone");
+        String server = "http://localhost:8080/WannaBeKrak";
+        String parameter = phone;
+        String restResource = "/services/person/";
+        String mime = "application/json";
+        String val = callRest(server, restResource, parameter, mime, "GET");
         try (PrintWriter out = response.getWriter()) {
-            out.println(res);
+            out.println(val);
+
         }
+    }
+
+    private static String callRest(String server, String restResource, String parameter, String mime, String method)
+    {
+        String data = "";
+        try {
+            URL url = new URL(server + restResource + parameter);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod(method);
+            Authenticator.setDefault(new Authenticator()
+            {
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication()
+                {
+                    return new PasswordAuthentication("group-d", "test".toCharArray());//Add your team password here 
+                }
+            });
+            conn.setRequestProperty("Accept", mime);
+            if (conn.getResponseCode() != 200) {
+                throw new RuntimeException("Failed: HTTP Response Code= " + conn.getResponseCode());
+            }
+            Scanner scan = new Scanner(conn.getInputStream());
+            while (scan.hasNextLine()) {
+                data += scan.next();
+            }
+            conn.disconnect();
+        } catch (IOException | RuntimeException e) {
+            System.out.println("Error: " + e);
+        }
+        return data;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

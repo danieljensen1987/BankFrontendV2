@@ -8,7 +8,7 @@ $(document).ready(function() {
     }, "Only numbers");
     $("#myform").validate({
         rules: {
-            cpr: {required: true, minlength: 11, remote: "LookUpCprServlet"},
+            cpr: {required: true, minlength: 11, maxlength: 11, remote: "LookUpCprServlet"},
             firstName: {required: true, minlength: 2, lettersonly: true},
             lastName: {required: true, minlength: 2, lettersonly: true},
             street: {required: true, minlength: 2, lettersonly: true},
@@ -21,6 +21,7 @@ $(document).ready(function() {
             cpr: {
                 required: "Please enter your CPR number",
                 minlength: jQuery.format("At least {0} characters required!"),
+                maxlength: jQuery.format("No more than {0} characters required!"),
                 remote: "Already excist"
             },
             firstName: {

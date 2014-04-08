@@ -28,6 +28,7 @@ public class CreateAccountCommand extends TargetCommand{
     BigDecimal number = new BigDecimal(request.getParameter("interest"));
         System.out.println("kommer vi her?");
     AccountDetail account = new CheckingAccountDetail(number);
+        System.out.println("acount: " + account);
         try {
             manager.createAccount(customer, account);
             System.out.println("kommer vi herind?");
