@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : CP
 */
 #krak{
-   cursor: default;
+   //cursor: default;
 color: buttontext;
 padding: 2px 4px 2px;
 font: -webkit-small-control;
