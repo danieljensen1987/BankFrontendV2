@@ -20,6 +20,7 @@ border-image-outset: initial;
 border-image-repeat: initial;
 background-color: buttonface;
 box-sizing: border-box;
+text-decoration:none;
 -webkit-appearance: button;
 }
 #se-leftside-panel{
