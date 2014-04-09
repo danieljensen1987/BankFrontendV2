@@ -22,9 +22,9 @@ public class WannabeKrak extends HttpServlet
     {
         response.setContentType("text/html;charset=UTF-8");
         String phone = request.getParameter("phone");
-        String server = "http://localhost:8080/WannaBeKrak";
+        String server = "http://localhost:8080/WBKrak";
         String parameter = phone;
-        String restResource = "/services/person/";
+        String restResource = "/service/person/";
         String mime = "application/json";
         String val = callRest(server, restResource, parameter, mime, "GET");
         try (PrintWriter out = response.getWriter()) {

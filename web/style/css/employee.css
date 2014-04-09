@@ -7,7 +7,21 @@ and open the template in the editor.
     Created on : 08-03-2014, 20:30:28
     Author     : CP
 */
-
+#krak{
+   cursor: default;
+color: buttontext;
+padding: 2px 4px 2px;
+font: -webkit-small-control;
+border: 1px outset buttonface;
+border-image-source: initial;
+border-image-slice: initial;
+border-image-width: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+background-color: buttonface;
+box-sizing: border-box;
+-webkit-appearance: button;
+}
 #se-leftside-panel{
     text-align: right;
     height: 100px;

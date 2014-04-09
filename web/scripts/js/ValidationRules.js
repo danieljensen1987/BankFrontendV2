@@ -11,7 +11,7 @@ $(document).ready(function() {
             cpr: {required: true, minlength: 11, maxlength: 11, remote: "LookUpCprServlet"},
             firstName: {required: true, minlength: 2, lettersonly: true},
             lastName: {required: true, minlength: 2, lettersonly: true},
-            street: {required: true, minlength: 2, lettersonly: true},
+            street: {required: true, minlength: 2, lettersonly: false},
             postalCode: {required: true, minlength: 4, numbersonly: true},
             postalDistrict: {required: true, minlength: 2, lettersonly: true},
             phone: {required: true, minlength: 8, numbersonly: true},

@@ -37,7 +37,8 @@
             <%@include file="../scripts/jsp/loginLogoutButton.jsp" %>
         </div>
         <div id="se-mid">
-            <form id="myform" action="Controller" method="get">
+            <!--original form width 782-->
+            <form id="myform" action="Controller" method="get" style="width: 582px;;margin-right: 0px">
                 <fieldset>
                     <legend>Registration form</legend>
                     <p>
@@ -84,11 +85,11 @@
                     </p>
                 </fieldset>
                 <p>
-                    <button type="submit" name="command" value="save-customer" style="padding-left: auto">Accept</button>
-                    
+                    <button type="submit" name="command" value="save-customer" style="margin-left:170px">Accept</button>
+                    <a  id="krak"  onclick="getResult()">krak opslag</a>
                 </p>
             </form>
-            <input type="submit" onclick="getResult()">
+            
         </div>
         <div id="se-leftside-spacer"></div>
         <div id="se-leftside-panel">
