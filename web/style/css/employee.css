@@ -23,6 +23,17 @@ box-sizing: border-box;
 text-decoration:none;
 -webkit-appearance: button;
 }
+
+#requestCount{
+    background-color: transparent;
+    background-position: center;
+    //margin: 0px auto;
+    margin-left: 19%;
+    margin-right: 0%;
+    height: 20px;
+    width: 800px;
+}
+
 #se-leftside-panel{
     text-align: right;
     height: 100px;

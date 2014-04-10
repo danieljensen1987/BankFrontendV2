@@ -32,7 +32,7 @@
                     cache: false,
                     dataType: "text" 
                      }).done(function(data){
-                         $("#spacer").append(data).html();
+                         $("#requestCount").append(data).html();
                      });
             }
         </script>
@@ -42,7 +42,7 @@
         <div id="main_menubar">
             <%@include file="../scripts/jsp/loginLogoutButton.jsp" %>
         </div>
-        <div id="spacer"> Antal opslag: </div>
+        <div id="requestCount"> Antal opslag: </div>
         <div id="se-mid">
             <!--original form width 782-->
             <form id="myform" action="Controller" method="get" style="width: 582px;;margin-right: 0px">
