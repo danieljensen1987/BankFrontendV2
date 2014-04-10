@@ -25,12 +25,20 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "WBkrakRequest", urlPatterns = {"/WBkrakRequest"})
 public class WBkrakRequest extends HttpServlet {
+private int PORT_NON_SSL;
+private String Krak_Server_address;
+private String Krak_Server_name;
+private String user_name;
+private String pwd;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
+        if(Krak_Server_address == null || Krak_Server_name == null){
+            initialize();
+        }
         response.setContentType("text/html;charset=UTF-8");
-        String server = "http://localhost:8080/WBKrak";
+        String server = "http://"+ Krak_Server_address + ":"+PORT_NON_SSL + "/"+ Krak_Server_name;
         String parameter = "thisuser";
         String restResource = "/service/request/";
         String mime = "text/plain";
@@ -40,7 +48,12 @@ public class WBkrakRequest extends HttpServlet {
 
         }
     }
-
+    private void initialize(){
+        Krak_Server_address = getServletContext().getInitParameter("krak_server_address");
+        Krak_Server_name = getServletContext().getInitParameter("krak_server_name");
+        PORT_NON_SSL = Integer.parseInt(getServletContext().getInitParameter("portNonSSL"));
+    }
+    
     private static String callRest(String server, String restResource, String parameter, String mime, String method)
     {
         String data = "";
