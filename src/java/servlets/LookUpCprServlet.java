@@ -21,7 +21,7 @@ public class LookUpCprServlet extends HttpServlet
         response.setContentType("text/html;charset=UTF-8");
         BankManager manager = Factory.getInstance().getManager();
         CustomerIdentifier cpr = CustomerIdentifier.fromString(request.getParameter("cpr"));
-        boolean res = manager.doesUserExist(cpr);
+//        boolean res = manager.doesUserExist(cpr);
         
 //        String cprs[] = {"090912-1111","090912-2222","090912-3333"};
 //        String cpr = request.getParameter("cpr");
@@ -32,9 +32,9 @@ public class LookUpCprServlet extends HttpServlet
 //            }
 //        }
         
-        try (PrintWriter out = response.getWriter()) {
-            out.println(res);
-        }
+//        try (PrintWriter out = response.getWriter()) {
+//            out.println(res);
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

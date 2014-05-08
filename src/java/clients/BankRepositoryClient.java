@@ -1,5 +1,6 @@
 package clients;
 
+import dk.cphbusiness.bank.contract.dto.TransferRequest;
 import java.util.Collection;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -41,6 +42,9 @@ public class BankRepositoryClient implements AutoCloseable {
   public void drop(String reg) {
     target.path(reg).request().delete();
     }
+  public void send(TransferRequest transfer){
+      target.request().post(Entity.entity(transfer, APPLICATION_JSON_TYPE));
+  }
   
   @Override
   public void close() {
