@@ -10,6 +10,7 @@ import commands.ListAccountsCommand;
 import commands.ListCustomersCommand;
 import commands.LoginCommand;
 import commands.LogoutCommand;
+import commands.MainCommand;
 import commands.PrepairTransferCommand;
 import commands.PrepairAccountCommand;
 import commands.SaveCustomerCommand;
@@ -50,7 +51,7 @@ public class Factory
         
         // viewed by all
         commands.put("login", new LoginCommand(roles, "/login/login.jsp"));
-        commands.put("main", new TargetCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
+        commands.put("main", new MainCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("showlogin", new ShowLoginCommand("/login/login.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("logout", new LogoutCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("greeting", new SayHelloCommand("/all/hello.jsp", Arrays.asList(SecurityRole.All)));
