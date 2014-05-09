@@ -27,7 +27,7 @@ public class BankRepositoryClient implements AutoCloseable {
 
   public BankRepositoryClient() { this(BASE_URI); }
   
-  public Collection list() {
+  public Collection<Bank> list() {
     return target.request(APPLICATION_JSON_TYPE).get(BANKS);
     }
   
@@ -42,6 +42,7 @@ public class BankRepositoryClient implements AutoCloseable {
   public void drop(String reg) {
     target.path(reg).request().delete();
     }
+  
   public void send(TransferRequest transfer){
       target.request().post(Entity.entity(transfer, APPLICATION_JSON_TYPE));
   }

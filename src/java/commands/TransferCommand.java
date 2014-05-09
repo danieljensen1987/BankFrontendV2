@@ -1,11 +1,13 @@
 package commands;
 
+import clients.TransferClient;
 import clients.Bank;
 import clients.BankRepositoryClient;
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.AccountDetail;
 import dk.cphbusiness.bank.contract.dto.AccountIdentifier;
 import dk.cphbusiness.bank.contract.dto.TransferRequest;
+import dk.cphbusiness.bank.contract.dto.TransferResponse;
 import dk.cphbusiness.bank.contract.eto.InsufficientFundsException;
 import dk.cphbusiness.bank.contract.eto.NoSuchAccountException;
 import dk.cphbusiness.bank.contract.eto.TransferNotAcceptedException;
@@ -18,13 +20,16 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import security.SecurityRole;
 
-public class TransferCommand extends TargetCommand {
+public class TransferCommand extends TargetCommand
+{
 
-    public TransferCommand(String target, List<SecurityRole> roles) {
+    public TransferCommand(String target, List<SecurityRole> roles)
+    {
         super(target, roles);
     }
 
-    private HttpServletRequest executeTransfer(HttpServletRequest request) {
+    private HttpServletRequest executeTransfer(HttpServletRequest request)
+    {
         BankManager manager = Factory.getInstance().getManager();
 
         AccountIdentifier sourceAccount = new AccountIdentifier(request.getParameter("source"));
@@ -55,34 +60,52 @@ public class TransferCommand extends TargetCommand {
     }
 
     @Override
-    public String execute(HttpServletRequest request) {
+    public String execute(HttpServletRequest request)
+    {
 
         String treg = request.getParameter("treg");
         HttpServletRequest requestResponse = null;
 
-        if (treg.isEmpty() || treg != null) {
-            requestResponse = executeTransfer(request);
-            return super.execute(requestResponse);
-
-        } else {
+        if (treg.isEmpty() || treg == null) {
             boolean sendt = false;
             AccountIdentifier sourceAccount = new AccountIdentifier(request.getParameter("source"));
             AccountIdentifier targetAccount = new AccountIdentifier(request.getParameter("target"));
             BigDecimal amount = new BigDecimal(request.getParameter("amount"));
 
-            BankRepositoryClient client = new BankRepositoryClient();
-            Bank bank = client.find(treg);
+            //BankRepositoryClient client = new BankRepositoryClient();
+            //Bank bank = client.find(treg);
             TransferRequest req = new TransferRequest(amount, sourceAccount, targetAccount);
-            BankRepositoryClient restClient = new BankRepositoryClient(bank.getUrl());
-            restClient.send(req);
+            //BankRepositoryClient restClient = new BankRepositoryClient(bank.getUrl());
+            //restClient.send(req);
             sendt = true;
             if (sendt) {
                 requestResponse = executeTransfer(request);
-
             }
             return super.execute(requestResponse);
-        }
 
+        } else {
+            String targetURL = null;
+            try (BankRepositoryClient rep = new BankRepositoryClient()) {
+                Bank bank = rep.find(treg);
+                if (bank == null) {
+                    throw new RuntimeException("Reg not found" + treg);
+                }
+                targetURL = bank.getUrl();
+                System.out.println("URL: " + targetURL);
+            }
+
+            try (TransferClient client = new TransferClient(targetURL)) {
+                AccountIdentifier source = new AccountIdentifier("4791", request.getParameter("source"));
+                AccountIdentifier target = new AccountIdentifier(treg, request.getParameter("target"));
+                BigDecimal amount = new BigDecimal(request.getParameter("amount"));
+                TransferRequest transferRequest = new TransferRequest(amount, source, target);
+                TransferResponse transferResponse = client.create(transferRequest);
+                System.out.println("Response: " + transferResponse.isOk()+ transferResponse.getMessage());
+            }
+
+//            requestResponse = executeTransfer(request);
+        }
+        return super.execute(requestResponse);
     }
 
 }

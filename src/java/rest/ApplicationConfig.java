@@ -1,4 +1,4 @@
-package commands;
+package rest;
 
 import java.util.Set; 
 import javax.ws.rs.core.Application;
@@ -23,7 +23,6 @@ public class ApplicationConfig extends Application
      */
     private void addRestResourceClasses(Set<Class<?>> resources)
     {
-        resources.add(commands.TransferResource.class);
         resources.add(rest.TransferResource.class);
     }
     
