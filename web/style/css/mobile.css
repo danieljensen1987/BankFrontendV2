@@ -1,0 +1,27 @@
+[data-role="page"] {
+    background: url(../gfx/main.png);
+    font-family: Gotham, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+[data-role="header"] {
+    
+    background-color: #00153a;
+    background-image: url(../gfx/cphbank-mobile-logo.png);
+    background-size:10em;
+    background-repeat:no-repeat;
+    background-position: left;
+    
+}
+
+[data-role="footer"] {
+    background-size:0em;
+    background-repeat:no-repeat;
+    background-color: #00153a;
+}
+
+[data-role="controlgroup"] {
+    
+    bottom: 0px;
+    
+}

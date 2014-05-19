@@ -55,8 +55,19 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>Controller</welcome-file>
+        <welcome-file>DesktopOrMobile</welcome-file>
     </welcome-file-list>
+    <security-constraint>
+        <display-name>Customer</display-name>
+        <web-resource-collection>
+            <web-resource-name>Customer pages</web-resource-name>
+            <description/>
+            <url-pattern>/mobile/private/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+        </auth-constraint>
+    </security-constraint>
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
