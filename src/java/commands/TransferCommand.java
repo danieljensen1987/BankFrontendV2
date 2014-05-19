@@ -63,25 +63,15 @@ public class TransferCommand extends TargetCommand
     public String execute(HttpServletRequest request)
     {
 
-        String treg = request.getParameter("treg");
+
+      String treg = request.getParameter("treg");
         HttpServletRequest requestResponse = null;
 
         if (treg.isEmpty() || treg == null) {
-            boolean sendt = false;
-            AccountIdentifier sourceAccount = new AccountIdentifier(request.getParameter("source"));
-            AccountIdentifier targetAccount = new AccountIdentifier(request.getParameter("target"));
-            BigDecimal amount = new BigDecimal(request.getParameter("amount"));
+            
+            requestResponse = executeTransfer(request);
+            //return super.execute(requestResponse);
 
-            //BankRepositoryClient client = new BankRepositoryClient();
-            //Bank bank = client.find(treg);
-            TransferRequest req = new TransferRequest(amount, sourceAccount, targetAccount);
-            //BankRepositoryClient restClient = new BankRepositoryClient(bank.getUrl());
-            //restClient.send(req);
-            sendt = true;
-            if (sendt) {
-                requestResponse = executeTransfer(request);
-            }
-            return super.execute(requestResponse);
 
         } else {
             String targetURL = null;
@@ -91,7 +81,8 @@ public class TransferCommand extends TargetCommand
                     throw new RuntimeException("Reg not found" + treg);
                 }
                 targetURL = bank.getUrl();
-                System.out.println("URL: " + targetURL);
+                        
+                        System.out.println("transferCommand URL: " + targetURL);
             }
 
             try (TransferClient client = new TransferClient(targetURL)) {
@@ -100,6 +91,10 @@ public class TransferCommand extends TargetCommand
                 BigDecimal amount = new BigDecimal(request.getParameter("amount"));
                 TransferRequest transferRequest = new TransferRequest(amount, source, target);
                 TransferResponse transferResponse = client.create(transferRequest);
+                System.out.println("transfer response after transfer"+ transferResponse.getMessage());
+                requestResponse = executeTransfer(request);
+                System.out.println("requestresponse "+ requestResponse.getContextPath());
+                
                 System.out.println("Response: " + transferResponse.isOk()+ transferResponse.getMessage());
             }
 

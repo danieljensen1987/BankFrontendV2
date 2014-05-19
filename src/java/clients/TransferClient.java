@@ -31,6 +31,9 @@ public class TransferClient implements AutoCloseable
 
     public TransferResponse create(TransferRequest transferRequest)
     {
+        System.out.println("Transfer client ------ Source: " + transferRequest.getSource());
+        System.out.println("Transfer client ------ target url: " + target.getUri());
+        System.out.println("=================================================================");
         return target
                 .request(APPLICATION_JSON_TYPE)
                 .post(

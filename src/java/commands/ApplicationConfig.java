@@ -24,7 +24,6 @@ public class ApplicationConfig extends Application
     private void addRestResourceClasses(Set<Class<?>> resources)
     {
         resources.add(commands.TransferResource.class);
-        resources.add(rest.TransferResource.class);
     }
     
 }

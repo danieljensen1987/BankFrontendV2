@@ -39,7 +39,7 @@ public class MainCommand implements Command
         } catch (UnknownHostException e) {
             System.out.println(e.getMessage());
         }
-        Bank bank = new Bank("4791", "CPHBankDummy", "http://" + ip +":8181/DummyBank/repository");
+        Bank bank = new Bank("4791", "CPHBankDummy", "http://" + ip +":8080/DummyBank/repository");
         client.save(bank);
         return target;
     }
