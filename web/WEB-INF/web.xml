@@ -66,6 +66,9 @@
         </web-resource-collection>
         <auth-constraint>
             <description/>
+            <role-name>Customer</role-name>
+            <role-name>Employee</role-name>
+            <role-name>SuperEmployee</role-name>
         </auth-constraint>
     </security-constraint>
     <login-config>
