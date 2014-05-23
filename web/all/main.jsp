@@ -31,7 +31,9 @@
                                     <a id="videocontainer_sidemenu_link" href="contact.jsp">Contact</a><br/><br/>
                                     <a id="videocontainer_sidemenu_link" href="newCustomer.jsp">Become a customer</a><br/><br/>
                                     
-                                    <a href="Controller?command=greeting">Kom til mig!</a>
+                                    <a id="videocontainer_sidemenu_link" href="Controller?command=greeting">Kom til mig!</a><br/>
+                                    <a id="videocontainer_sidemenu_link" href="Controller?command=about">About us</a>
+                                    
 
 
                                 </div></td></tr></table>

@@ -30,18 +30,16 @@ public class Controller extends HttpServlet
             throws ServletException, IOException
     {
 
-        String cmdStr = request.getParameter("command");
-        cmdStr = cmdStr != null ? cmdStr : "main";
-        Command command = Factory.getInstance().getCommand(cmdStr, request);
+        String commandString = request.getParameter("command");
+        commandString = commandString != null ? commandString : "main";
+        Command command = Factory.getInstance().getCommand(commandString, request);
         String path = command.execute(request);
 
         if (command instanceof ShowLoginCommand && !request.isSecure()) {
             String SSL = "https://" + request.getServerName() + ":" + PORT_SSL + request.getRequestURI() + "?command=showlogin";
-            System.out.println("SSL redirect: " + SSL);
             response.sendRedirect(SSL);
         } else if (command instanceof LogoutCommand) {
             String nonSSL = "http://" + request.getServerName() + ":" + PORT_NON_SSL + request.getRequestURI();
-            System.out.println("Non SSL redirect: " + nonSSL);
             response.sendRedirect(nonSSL);
         } else {
             request.getRequestDispatcher(path).forward(request, response);

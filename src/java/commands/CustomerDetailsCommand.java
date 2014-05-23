@@ -1,9 +1,6 @@
 package commands;
 
-import com.sun.xml.wss.impl.transform.ACTransform;
 import dk.cphbusiness.bank.contract.BankManager;
-import dk.cphbusiness.bank.contract.dto.AccountDetail;
-import dk.cphbusiness.bank.contract.dto.AccountIdentifier;
 import dk.cphbusiness.bank.contract.dto.CustomerDetail;
 import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
 import dk.cphbusiness.bank.contract.eto.NoSuchCustomerException;
@@ -32,8 +29,6 @@ public class CustomerDetailsCommand extends TargetCommand{
         } catch (NoSuchCustomerException ex) {
             Logger.getLogger(CustomerDetailsCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
-           // CustomerDetail customer = (CustomerDetail)request.getAttribute("customer");
-         //   System.out.println("haha "+ customer.getFirstName()+" "+customer.getPhone()+"------------------------------------------" );
         request.setAttribute("customer", customer);
        
         return super.execute(request);

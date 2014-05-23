@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package servlets;
 
 import java.io.IOException;
@@ -19,41 +13,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author CP
- */
 @WebServlet(name = "WBkrakRequest", urlPatterns = {"/WBkrakRequest"})
-public class WBkrakRequest extends HttpServlet {
-private int PORT_NON_SSL;
-private String Krak_Server_address;
-private String Krak_Server_name;
-private String user_name;
-private String pwd;
+public class WBkrakRequest extends HttpServlet
+{
+
+    private int PORT_NON_SSL;
+    private String Krak_Server_address;
+    private String Krak_Server_name;
+    private String user_name;
+    private String pwd;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        if(Krak_Server_address == null || Krak_Server_name == null){
+        if (Krak_Server_address == null || Krak_Server_name == null) {
             initialize();
         }
         response.setContentType("text/html;charset=UTF-8");
-        String server = "http://"+ Krak_Server_address + ":"+PORT_NON_SSL + "/"+ Krak_Server_name;
+        String server = "http://" + Krak_Server_address + ":" + PORT_NON_SSL + "/" + Krak_Server_name;
         String parameter = "thisuser";
         String restResource = "/service/request/";
         String mime = "text/plain";
         String val = callRest(server, restResource, parameter, mime, "GET");
         try (PrintWriter out = response.getWriter()) {
             out.println(val);
-
         }
     }
-    private void initialize(){
+
+    private void initialize()
+    {
         Krak_Server_address = getServletContext().getInitParameter("krak_server_address");
         Krak_Server_name = getServletContext().getInitParameter("krak_server_name");
         PORT_NON_SSL = Integer.parseInt(getServletContext().getInitParameter("portNonSSL"));
     }
-    
+
     private static String callRest(String server, String restResource, String parameter, String mime, String method)
     {
         String data = "";

@@ -16,6 +16,7 @@
             <div id="se-mid">
                 <!-- <li><a href="ListAccounts">list account</a></li>-->
                 <a href="Controller?command=list-customers">List customers</a>
+                <a href="Controller?command=about">About</a>
                 <!-- <li><a href="Controller?command=list-accounts">List accounts</a></li> -->
             </div>
         

@@ -3,13 +3,11 @@ package servlets;
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import servlets.Factory;
 
 @WebServlet(name = "LookUpCprServlet", urlPatterns = {"/LookUpCprServlet"})
 public class LookUpCprServlet extends HttpServlet

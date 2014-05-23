@@ -1,12 +1,9 @@
 package commands;
 
 import dk.cphbusiness.bank.contract.BankManager;
-import dk.cphbusiness.bank.contract.dto.AccountDetail;
-import dk.cphbusiness.bank.contract.dto.AccountIdentifier;
 import dk.cphbusiness.bank.contract.dto.AccountSummary;
 import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
 import servlets.Factory;
-//import dk.cphbusiness.dummy.bank.model.Account;
 import java.util.Collection;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;

@@ -1,5 +1,6 @@
 package servlets;
 
+import commands.AboutCommand;
 import commands.TargetCommand;
 import commands.Command;
 import commands.CreateAccountCommand;
@@ -55,6 +56,7 @@ public class Factory
         commands.put("showlogin", new ShowLoginCommand("/login/login.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("logout", new LogoutCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("greeting", new SayHelloCommand("/all/hello.jsp", Arrays.asList(SecurityRole.All)));
+        commands.put("about", new AboutCommand("/all/about.jsp", Arrays.asList(SecurityRole.All)));
         
         // viewed by customers
         

@@ -4,25 +4,29 @@
 <html>
     <head>
         <link rel="stylesheet" href="/BankFrontend/style/css/default.css"/>
-        <link rel="stylesheet" href="/BankFrontend/style/css/employee.css"/>
+        <link rel="stylesheet" href="/BankFrontend/style/css/main.css"/>
         <link rel="shortcut icon" href="/BankFrontend/style/gfx/favicon.ico" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CphBank - SuperEmployee Page</title>
+        <title>cphbank - Employee</title>
     </head>
     <body>
         <div id="banner"></div>
-        <div id="spacer"></div>
         <div id="main_menubar">
             <%@include file="../scripts/jsp/loginLogoutButton.jsp" %>
         </div>
-        <div id="se-mid">something here!</div>
-        <div id="se-leftside-panel">
-            <!-- <li><a href="ListAccounts">list account</a></li>-->
-            <a href="Controller?command=se-list-customers">List customers</a><br/>
-            <a href="Controller?command=create-customer">Create Customer</a><br/>
-            <a href="Controller?command=prepair-account">Create Account</a>
-            <a href="Controller?command=about">About</a>
-            <!-- <li><a href="Controller?command=list-accounts">List accounts</a></li> -->
+        <div id="wrapper">
+            <fieldset>
+                <legend>
+                    This is just som random text to show an about page.
+                </legend>
+                <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
+                    Currently customers in bank: ${customers}
+                </c:if>
+                <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==false}">
+                    Awwww ! Nothing to se here...
+                </c:if>
+
+            </fieldset>
         </div>
         <div id="se-leftside-spacer"></div>
         <div id="spacer"></div>

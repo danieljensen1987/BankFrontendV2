@@ -2,7 +2,6 @@ package commands;
 
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.AccountDetail;
-import dk.cphbusiness.bank.contract.dto.AccountIdentifier;
 import dk.cphbusiness.bank.contract.dto.CheckingAccountDetail;
 import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
 import dk.cphbusiness.bank.contract.eto.CustomerBannedException;
@@ -26,12 +25,9 @@ public class CreateAccountCommand extends TargetCommand{
     BankManager manager = Factory.getInstance().getManager();
     CustomerIdentifier customer = CustomerIdentifier.fromString(request.getParameter("cpr"));
     BigDecimal number = new BigDecimal(request.getParameter("interest"));
-        System.out.println("kommer vi her?");
     AccountDetail account = new CheckingAccountDetail(number);
-        System.out.println("acount: " + account);
         try {
             manager.createAccount(customer, account);
-            System.out.println("kommer vi herind?");
         } catch (NoSuchCustomerException ex) {
             Logger.getLogger(CreateAccountCommand.class.getName()).log(Level.SEVERE, null, ex);
         } catch (CustomerBannedException ex) {
