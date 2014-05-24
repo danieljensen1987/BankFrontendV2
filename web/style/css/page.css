@@ -1,0 +1,175 @@
+html{
+    overflow: -moz-scrollbars-vertical;
+    overflow: scroll;
+}
+body{
+    margin: 0px auto;
+    background-image: url(.../gfx/main.png);
+    background-repeat: repeat;
+}
+#content{
+    width: 800px;
+    margin: 0px auto;
+}
+
+#banner{
+    height: 194px;
+    background-color: #00153a;
+}
+#logo{
+    content: url(.../gfx/cphbank-logo.png);
+    height: 100px;
+    padding: 30px;
+}
+#menu_top{
+    height: 39px;
+    background-color: white;
+    -webkit-box-shadow: 0 12px 6px -6px gray;
+    -moz-box-shadow: 0 12px 6px -6px grey;
+    box-shadow: 0 12px 6px -6px grey;
+}
+
+#menu_top_content{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    padding: 10px;
+    text-align: left;
+}
+#menu_top_content a{
+    color: #00153a;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+#menu_top_content a:hover{
+    color: #fbb040;
+}
+#search{
+    padding: 10px;
+    float: right; 
+}
+.search
+{
+    margin-top: 6px;
+    margin-right: 6px;
+    float: right;
+    border: 1px solid #fbb040;
+    width: 200px;
+}
+
+.search input[type="text"]
+{
+    background: none;
+    border: 0 none;
+    float: left;
+    margin: 0;
+    padding: 3px 3px;
+    width: 170px;
+}
+
+.search input[type="submit"]
+{
+    background-image: url(.../gfx/loop.png);
+    background-repeat: no-repeat;
+    background-color: white;
+    border: 0 none;
+    margin: 0;
+    padding: 3px 0;
+    text-indent: 100px;
+    width: 20px;
+}
+.search input:focus {
+    outline:none;
+}
+#spacer{
+    background-color: transparent;
+    height: 30px;
+}
+#wrapper{
+    width: 800px;
+}
+#sidebar{
+    float: left;
+    width: 180px;
+}
+#sidebar_content{
+    background-color: white;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
+    -webkit-box-shadow: 0 12px 6px -6px gray;
+    -moz-box-shadow: 0 12px 6px -6px grey;
+    box-shadow: 0 12px 6px -6px grey;
+}
+
+.sidebar_title{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #00153a;
+    padding: 5px;
+    color: #fbb040;
+}
+.sidebar_links{
+    list-style-type: none;
+    padding-left: 0px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(221, 222, 219);
+}
+.sidebar_link{
+    padding: 10px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(221, 222, 219);
+}
+.sidebar_link a{
+    text-decoration: none;
+    color: #00153a;
+}
+.sidebar_link a:hover{
+    color: #fbb040;
+}
+#spacer_vertical {
+    width: 30px;
+    background-color: transparent;
+}
+#wrapper_content{
+    padding: 5px;
+    float: right;
+    background-color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #fbb040;
+    width: 580px;
+    -webkit-box-shadow: 0 12px 6px -6px gray;
+    -moz-box-shadow: 0 12px 6px -6px grey;
+    box-shadow: 0 12px 6px -6px grey;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#footer{
+    height: 30px;
+    width: 790px;
+    line-height: 30px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #fbb040;
+    background-color: #00153a;
+    -webkit-box-shadow: 0 12px 6px -6px gray;
+    -moz-box-shadow: 0 12px 6px -6px grey;
+    box-shadow: 0 12px 6px -6px grey;
+
+}
+#footer_content{
+    height: 30px;
+    font-family: Gotham, Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: middle;
+}
+#footer_content a{
+    color: #fbb040;
+    text-decoration: none;
+}
+.clear {
+    clear: both;
+}

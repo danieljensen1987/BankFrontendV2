@@ -1,27 +1,17 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 08-03-2014, 20:30:28
-    Author     : CP
-*/
 #krak{
-   //cursor: default;
-color: buttontext;
-padding: 2px 4px 2px;
-font: -webkit-small-control;
-border: 1px outset buttonface;
-border-image-source: initial;
-border-image-slice: initial;
-border-image-width: initial;
-border-image-outset: initial;
-border-image-repeat: initial;
-background-color: buttonface;
-box-sizing: border-box;
-text-decoration:none;
--webkit-appearance: button;
+    color: buttontext;
+    padding: 2px 4px 2px;
+    font: -webkit-small-control;
+    border: 1px outset buttonface;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    background-color: buttonface;
+    box-sizing: border-box;
+    text-decoration:none;
+    -webkit-appearance: button;
 }
 
 #requestCount{
@@ -43,7 +33,7 @@ text-decoration:none;
     top:0%;
     position: fixed;
     padding: 0; 
-    
+
 }
 
 #se-leftside-spacer{
@@ -56,12 +46,12 @@ text-decoration:none;
     padding: 0;
     border-radius: 0;
     position: fixed;
-    
-    
+
+
 }
 
 #se-mid{
-    
+
     height:480px;
     width: 782px;
     margin-left: 19%;
@@ -78,5 +68,5 @@ text-decoration:none;
     border-radius: 0;
     top: 0%;
     overflow: hidden;
-    
+
 }

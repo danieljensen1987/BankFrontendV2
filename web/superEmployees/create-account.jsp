@@ -3,38 +3,60 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/BankFrontend/style/css/default.css"/>
+        <link rel="stylesheet" href="/BankFrontend/style/css/page.css"/>
         <link rel="stylesheet" href="/BankFrontend/style/css/employee.css"/>
         <link rel="shortcut icon" href="/BankFrontend/style/gfx/favicon.ico" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Create account form</title>
+        <title>Cphbank - Create Account</title>
     </head>
     <body>
-        <div id="banner"></div>
-        <div id="spacer"></div>
-        <div id="main_menubar">
-            <%@include file="../scripts/jsp/loginLogoutButton.jsp" %>
-        </div>
-
-        <div id="se-mid">Create account form
-                <form action="Controller" method="POST">
-                    <table>
-                        <tr>
-                            <th><label for="cpr">Cpr. nr.</label></th>
-                            <td><input type="text" name="cpr" id="cpr"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="interest">Interest</label></th>
-                            <td><input type="text" name="interest" id="interest"></td>
-                        </tr>
-                        <td>
-                            <button type="submit" name="command" value="create-account" style="padding-left: auto">Accept</button>
-                        </td>
-                    </table>
-                </form>
+        <div id="content">
+            <div id="banner">
+                <div id="logo"></div>
+                <div id="menu_top">
+                    <%@include file="../scripts/jsp/menuTop.jsp" %>
+                </div>
             </div>
-        <div id="se-leftside-spacer"></div>
-        <div id="spacer"></div>
-        <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
+
+            <div id="spacer"></div>
+
+            <div id="wrapper">
+                <div id="sidebar">
+                    <div id="sidebar_content">
+                        <div class="sidebar_title">CREATE ACCOUNT</div>
+                        <ul class="sidebar_links">
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="wrapper_content">
+                    <div id="wrapper_content">
+                        <form action="Controller" method="POST">
+                            <table>
+                                <tr>
+                                    <th><label for="cpr">Cpr. nr.</label></th>
+                                    <td><input type="text" name="cpr" id="cpr"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="interest">Interest</label></th>
+                                    <td><input type="text" name="interest" id="interest"></td>
+                                </tr>
+                                <td>
+                                    <button type="submit" name="command" value="create-account" style="padding-left: auto">Accept</button>
+                                </td>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+
+            <div id="spacer"></div>
+
+            <div id="footer">
+                <div id="footer_content">
+                    <%@include file="../scripts/jsp/footer.jsp" %></div>
+            </div>
+        </div>
     </body>
 </html>

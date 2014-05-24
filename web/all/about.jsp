@@ -3,33 +3,54 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/BankFrontend/style/css/default.css"/>
-        <link rel="stylesheet" href="/BankFrontend/style/css/main.css"/>
+        <link rel="stylesheet" href="/BankFrontend/style/css/page.css"/>
         <link rel="shortcut icon" href="/BankFrontend/style/gfx/favicon.ico" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>cphbank - Employee</title>
+        <title>cphbank - About</title>
     </head>
     <body>
-        <div id="banner"></div>
-        <div id="main_menubar">
-            <%@include file="../scripts/jsp/loginLogoutButton.jsp" %>
-        </div>
-        <div id="wrapper">
-            <fieldset>
-                <legend>
-                    This is just som random text to show an about page.
-                </legend>
-                <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
-                    Currently customers in bank: ${customers}
-                </c:if>
-                <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==false}">
-                    Awwww ! Nothing to se here...
-                </c:if>
+        <div id="content">
+            <div id="banner">
+                <div id="logo"></div>
+                <div id="menu_top">
+                    <%@include file="../scripts/jsp/menuTop.jsp" %>
+                </div>
+            </div>
 
-            </fieldset>
+            <div id="spacer"></div>
+
+            <div id="wrapper">
+                <div id="sidebar">
+                    <div id="sidebar_content">
+                        <div class="sidebar_title">ABOUT</div>
+                        <ul class="sidebar_links">
+                            <li class="sidebar_link">Link 1</li>
+                            <li class="sidebar_link">Link 1</li>
+                            <li class="sidebar_link">Link 1</li>
+                            <li class="sidebar_link">Link 1</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="wrapper_content">
+                    <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
+                        Currently customers in bank: ${customers}
+                    </c:if>
+                    <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==false}">
+                        Awwww ! Nothing to se here...
+                    </c:if>
+                </div>
+            </div>
+            <div class="clear"></div>
+
+
+
+            <div id="spacer"></div>
+
+            <div id="footer">
+                <div id="footer_content">
+                    <%@include file="../scripts/jsp/footer.jsp" %></div>
+            </div>
         </div>
-        <div id="se-leftside-spacer"></div>
-        <div id="spacer"></div>
-        <div id="footer">cphbank, Lundtoftevej 93, DK-2800 Kgs. Lyngby  Telefon: +45 12 34 56 67  kontakt@cphbank.dk  CVR: 4545 8181  EAN: 5798 000 56 0550</div>
     </body>
 </html>
